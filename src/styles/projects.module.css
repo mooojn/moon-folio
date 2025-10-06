@@ -1,0 +1,36 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.project {
+  background: var(--bg);
+  width: 75%;
+  border-radius: 22px;
+  padding: 10px 25px;
+  transition: all 0.3s ease-in-out;
+}
+
+.project:hover {
+  background: var(--bg-light);
+}
+
+.projectImage {
+  display: flex;
+  justify-content: center;
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+}
+
+@media screen and (max-width:1024px) {
+  .project {
+    width: var(--per);
+  }
+}
