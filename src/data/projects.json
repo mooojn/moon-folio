@@ -1,0 +1,72 @@
+[
+    {
+        "category": "FinTech",
+        "title": "Crypto Yard – Crypto Trading Website",
+        "description": "A real-time crypto trading platform with secure authentication and seamless frontend-backend integration.",
+        "features": [
+            "Developed full backend in C# integrating third-party trading APIs, reducing response latency by 25%",
+            "Implemented secure user authentication with 100% login success rate during testing",
+            "Led a 6-member team, achieving on-time delivery with zero critical bugs"
+        ],
+        "technologies": [
+            "C#",
+            "ASP.NET",
+            "React JS",
+            "REST APIs",
+            "SQL Server"
+        ],
+        "actions": [
+            {
+                "name": "Github",
+                "link": "https://github.com/mooojn/Crypto-Yard"
+            }
+        ],
+        "image": "./projects/1.png"
+    },
+    {
+        "category": "Banking",
+        "title": "Azure Bank – Bank Management System",
+        "description": "A complete banking management system built with modular C# architecture and SQL Server backend.",
+        "features": [
+            "Developed banking app in C# with DLL-based architecture, improving modularity by 40%",
+            "Designed Windows Forms GUI for account, deposit, and withdrawal operations",
+            "Integrated SQL Server backend with 99.9% query success rate during testing"
+        ],
+        "technologies": [
+            "C#",
+            "Windows Forms",
+            "OOP",
+            "SQL Server"
+        ],
+        "actions": [
+            {
+                "name": "Github",
+                "link": "https://github.com/mooojn/Azure-Bank"
+            }
+        ],
+        "image": "./projects/2.png"
+    },
+    {
+        "category": "Database Systems",
+        "title": "Database Management System",
+        "description": "A custom DBMS built in C# with SQL-like query parsing, ACID compliance, and efficient data handling.",
+        "features": [
+            "Led 4-member team to implement SQL-like query parsing with ACID-compliant transactions",
+            "Implemented file indexing, backup/restore, improving query execution efficiency by 35%",
+            "Built C# Windows Forms UI integrated with backend for smooth database operations"
+        ],
+        "technologies": [
+            "C#",
+            "Windows Forms",
+            "SQL-like Engine",
+            "File Indexing"
+        ],
+        "actions": [
+            {
+                "name": "Github",
+                "link": "https://github.com/mooojn/ADBMS-c-sharp"
+            }
+        ],
+        "image": "./projects/3.png"
+    }
+]
