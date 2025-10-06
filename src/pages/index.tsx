@@ -1,4 +1,7 @@
 import Head from "next/head";
+import Navbar from "@/components/Navbar";
+import Hero from "@/sections/Hero";
+import About from "@/sections/Projects";
 
 export default function Home() {
   return (
@@ -9,10 +12,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-    <div className="hero">
-      <h1>Hi</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ipsam aspernatur repudiandae ullam a provident ab magni ipsum numquam nihil?</p>
-    </div>
+
+      <Navbar />
+
+      <main className="scroll-smooth">
+        <Hero />
+        <About />
+      </main>
     </>
   );
 }
+
+
