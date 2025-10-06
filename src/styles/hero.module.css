@@ -1,0 +1,53 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Make background gradient sit behind content */
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 5;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: 300px;
+  filter: blur(25px);
+}
+
+.hero h1 {
+  font-size: 4.5rem;
+  width: 75%;
+  margin-bottom: 15px;
+  z-index: 1;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 25px;
+  z-index: 1;
+}
+
+.hero .btn {
+  background: #ffcc00;
+  color: black;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+  z-index: 1;
+  position: relative;
+}
+
+.hero .btn:hover {
+  background: #ffe066;
+}
