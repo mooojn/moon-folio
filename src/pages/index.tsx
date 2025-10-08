@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
-import Hero from "@/sections/Hero";
-import About from "@/sections/Projects";
+import { components } from "@/data/layout";
 
 export default function Home() {
   return (
@@ -16,8 +15,11 @@ export default function Home() {
       <Navbar />
 
       <main className="scroll-smooth">
-        <Hero />
-        <About />
+        {components.map((component, id)=>
+          <div id={component.id}>
+            {component.render}
+          </div>
+        )}
       </main>
     </>
   );

@@ -1,7 +1,7 @@
 import styles from "@/styles/navbar.module.css";
+import { links } from "@/data/layout";
 
 export default function Navbar() {
-    const links = ["home", "projects"];
 
     return (
         <div className={styles.navbarWrap}>
