@@ -3,7 +3,7 @@ import projects from '../data/projects.json';
 
 export default function Projects() {
   return (
-    <div id="projects" className={styles.projects}>
+    <div className={styles.projects}>
       {projects.map((project, id) =>
         <Card key={id} project={project} />
       )}
