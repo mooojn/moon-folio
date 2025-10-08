@@ -16,7 +16,7 @@ export default function Home() {
 
       <main className="scroll-smooth">
         {components.map((component, id)=>
-          <div id={component.id}>
+          <div key={id} id={component.id}>
             {component.render}
           </div>
         )}
