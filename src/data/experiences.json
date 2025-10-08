@@ -1,0 +1,42 @@
+[
+    {
+        "company": "UET Lahore",
+        "period": "3 months",
+        "role": "Odoo Intern",
+        "points": [
+            "Streamlined Odoo component development within a 4-member team, reducing module integration time by 25%.",
+            "Built responsive UI and social media integration modules, increasing platform usability by 30%.",
+            "Deployed end-to-end features in agile sprints, improving release efficiency by 20%."
+        ]
+    },
+    {
+        "company": "UK Business Loan Expert",
+        "period": "Project-based",
+        "role": "WordPress Developer",
+        "points": [
+            "Delivered a WordPress website that boosted loan application conversion rates by 35%.",
+            "Optimized page speed and responsiveness, reducing bounce rate by 28%.",
+            "Improved SEO rankings, moving 10+ target keywords into the top 5 positions on Google UK."
+        ]
+    },
+    {
+        "company": "UAE Construction Company",
+        "period": "Project-based",
+        "role": "WordPress Developer",
+        "points": [
+            "Developed a corporate site that increased client inquiries by 40% within the first quarter.",
+            "Implemented scalable navigation and mobile-first design, enhancing mobile traffic share by 32%.",
+            "Reduced site maintenance overhead by 25% through modular WordPress architecture."
+        ]
+    },
+    {
+        "company": "UAE Fire Management Company",
+        "period": "Project-based",
+        "role": "WordPress Developer",
+        "points": [
+            "Migrated 100+ static HTML/CSS pages to WordPress with 0% downtime during transition.",
+            "Enhanced SEO performance by 80%, driving a 2.5x increase in organic traffic within 6 months.",
+            "Optimized hosting and caching, reducing average page load time from 4.2s to 1.6s."
+        ]
+    }
+]
