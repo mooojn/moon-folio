@@ -7,15 +7,17 @@
 }
 
 .project {
-  background: var(--bg);
   width: 75%;
   border-radius: 22px;
   padding: 10px 25px;
+  background: var(--hover-bg);
+  background-size: 100% 200%;
+  background-position: 0 0;
   transition: all 0.3s ease-in-out;
 }
 
 .project:hover {
-  background: var(--bg-light);
+  background-position: 100% 50%;
 }
 
 .projectImage {
