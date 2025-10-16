@@ -5,6 +5,8 @@ import Experiences from "@/sections/Experiences";
 
 export const links = ["home", "projects", "experiences"];
 
+export const bullets = ["✦", "🔹"];
+
 export const components = [
     {
         id: 'home',
