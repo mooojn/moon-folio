@@ -1,4 +1,5 @@
 import styles from "@/styles/experiences.module.css";
+import { bullets } from "@/data/layout";
 import experiences from "@/data/experiences.json";
 
 export default function Experiences() {
@@ -14,12 +15,11 @@ export default function Experiences() {
 function Experience({ experience }: { experience: any }) {
     return (
         <div className={styles.experience}>
+            <h3>{experience.role} | {experience.period}</h3>
             <h2>{experience.company}</h2>
-            <h3>{experience.period}</h3>
-            <h1>{experience.role}</h1>
             <ul>
                 {experience.points.map((point: any, id: any) =>
-                    <li key={id}>{point}</li>
+                    <li key={id}>{bullets[1]} {point}</li>
                 )}
             </ul>
         </div>
