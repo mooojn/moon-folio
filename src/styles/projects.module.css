@@ -7,7 +7,7 @@
 }
 
 .project {
-  width: 75%;
+  width: var(--per);
   border-radius: 22px;
   padding: 10px 25px;
   background: var(--hover-bg);
@@ -26,10 +26,59 @@
 }
 
 .project img {
+  width: var(--per);
   width: 100%;
-  height: auto;
+  /* height: auto; */
   border-radius: 22px;
 }
+
+.project h2 {
+  margin-top: 10px;
+  font-size: var(--size-sub);
+  color: var(--text-muted);
+}
+
+.project h1 {
+  font-size: var(--size-head);
+  
+}
+
+.project p {
+  margin-top: 10px;
+  font-size: var(--size-text);
+}
+
+.project ul {
+  margin-top: 10px;
+  font-size: var(--size-text);
+}
+
+.projectTechnologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.projectTechnologies li {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.projectTechnologies li:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #0056d2, #00a3cc);
+}
+
+
 
 @media screen and (max-width:1024px) {
   .project {
