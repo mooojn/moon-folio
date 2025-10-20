@@ -27,13 +27,12 @@
 
 .experience h3 {
   color: var(--text-muted);
-  font-size: 0.8rem;
+  font-size: var(--size-sub);
 }
 
 .experience h2 {
-  font-size: 1.8rem;
+  font-size: var(--size-head);
 }
-
 
 .experience  ul{
   margin-top: 5px;
