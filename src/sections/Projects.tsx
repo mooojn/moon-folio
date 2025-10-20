@@ -1,5 +1,7 @@
 import styles from "@/styles/projects.module.css";
 import projects from '@/data/projects.json';
+import GitHubButton from 'react-github-btn'
+import { bullets } from "@/data/layout";
 
 export default function Projects() {
   return (
@@ -23,7 +25,7 @@ function Card({ project }: { project: any }) {
 
       <ul className={styles.projectFeatures}>
         {project.features.map((feature: any, id: any) =>
-          <li key={id}>✅ {feature}</li>
+          <li key={id}>{bullets[1]}{feature}</li>
         )}
       </ul>
       <ul className={styles.projectTechnologies}>
@@ -32,10 +34,12 @@ function Card({ project }: { project: any }) {
         )}
       </ul>
 
-      {project.actions.map((action: any, id: any) =>
-        <button key={id}><a href={action.link} target="_blank">{action.name}</a></button>
-      )}
+      <div className="action">
 
+        {project.actions.map((action: any, id: any) =>
+          <GitHubButton href={action.link} data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Github">Github</GitHubButton>
+        )}
+      </div>
     </div>
   );
 }
