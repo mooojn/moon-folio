@@ -20,8 +20,11 @@
   --text-muted: hsl(0 0% 70%);
 
   
-  --per: 75%;
+  --per: 92%;
   --hover-bg: linear-gradient(var(--bg-light) 50%, var(--bg));
+  --size-sub: 0.8rem;
+  --size-head: 1.8rem;
+  --size-text: 1.2rem;
 }
 
 * {
@@ -57,4 +60,9 @@ a {
 
 ul {
   list-style: none;
+}
+
+.action {
+  display: flex;
+  justify-content: right;
 }
