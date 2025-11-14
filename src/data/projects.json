@@ -3,6 +3,16 @@
         "category": "FinTech",
         "title": "Crypto Yard – Crypto Trading Website",
         "description": "A real-time crypto trading platform with secure authentication and seamless frontend-backend integration.",
+        "metrics": [
+            {
+                "name": "Latency Reduction",
+                "value": "25%"
+            },
+            {
+                "name": "Success Rate",
+                "value": "100%"
+            }
+        ],
         "features": [
             "Developed full backend in C# integrating third-party trading APIs, reducing response latency by 25%",
             "Implemented secure user authentication with 100% login success rate during testing",
@@ -27,6 +37,16 @@
         "category": "Banking",
         "title": "Azure Bank – Bank Management System",
         "description": "A complete banking management system built with modular C# architecture and SQL Server backend.",
+        "metrics": [
+            {
+                "name": "Modularity",
+                "value": "40%"
+            },
+            {
+                "name": "Query Success Rate",
+                "value": "99.9%"
+            }
+        ],
         "features": [
             "Developed banking app in C# with DLL-based architecture, improving modularity by 40%",
             "Designed Windows Forms GUI for account, deposit, and withdrawal operations",
@@ -50,6 +70,16 @@
         "category": "Database Systems",
         "title": "Database Management System",
         "description": "A custom DBMS built in C# with SQL-like query parsing, ACID compliance, and efficient data handling.",
+        "metrics": [
+            {
+                "name": "Efficiency",
+                "value": "35%"
+            },
+            {
+                "name": "Conflicts",
+                "value": "None"
+            }
+        ],
         "features": [
             "Led 4-member team to implement SQL-like query parsing with ACID-compliant transactions",
             "Implemented file indexing, backup/restore, improving query execution efficiency by 35%",
