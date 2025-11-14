@@ -1,13 +1,20 @@
-.navbar {
+.navbarWrap {
   position: fixed;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.navbar {
   width: 300px;
   display: flex;
   justify-content: center;
-  padding: 18px 0;
-  z-index: 1000;
+  align-items: center;
+  padding: 18px 20px;
   border-radius: 22px;
 
   background: rgba(255, 255, 255, 0.08);

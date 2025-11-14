@@ -1,11 +1,11 @@
 import styles from "@/styles/navbar.module.css";
 import { links } from "@/data/layout";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
 
     return (
         <div className={styles.navbarWrap}>
-
             <nav className={styles.navbar}>
                 <ul>
                     {links.map(link => (
@@ -15,6 +15,7 @@ export default function Navbar() {
                     ))}
                 </ul>
             </nav>
+            <ThemeToggle />
         </div >
     );
 }

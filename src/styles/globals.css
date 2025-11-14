@@ -4,22 +4,13 @@
 
 :root {
   /* light-theme */
-  /* --bg-dark: hsl(0 0% 100%);
+  --bg-dark: hsl(0 0% 100%);
   --bg: hsl(0 0% 95%);
   --bg-light: hsl(0 0% 90%);
 
   --text: hsl(0 0% 0%);
-  --text-muted: hsl(0 0% 40%); */
+  --text-muted: hsl(0 0% 40%);
 
-  /* dark-theme */
-  --bg-dark: hsl(0 0% 0%);
-  --bg: hsl(0 0% 5%);
-  --bg-light: hsl(0 0% 10%);
-
-  --text: hsl(0 0% 95%);
-  --text-muted: hsl(0 0% 70%);
-
-  
   --per: 92%;
   --hover-bg: linear-gradient(var(--bg-light) 50%, var(--bg));
   --size-sub: 0.8rem;
@@ -27,10 +18,21 @@
   --size-text: 1.2rem;
 }
 
+[data-theme="dark"] {
+  /* dark-theme */
+  --bg-dark: hsl(0 0% 0%);
+  --bg: hsl(0 0% 5%);
+  --bg-light: hsl(0 0% 10%);
+
+  --text: hsl(0 0% 95%);
+  --text-muted: hsl(0 0% 70%);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 html,
