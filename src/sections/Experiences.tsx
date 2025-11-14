@@ -4,10 +4,16 @@ import experiences from "@/data/experiences.json";
 
 export default function Experiences() {
     return (
-        <div className={styles.experiences}>
-            {experiences.map((experience, id) =>
-                <Experience key={id} experience={experience} />
-            )}
+        <div className={styles.experiencesSection}>
+            <div className={styles.sectionHeading}>
+                <h2 className={styles.sectionSubtitle}>Career</h2>
+                <h1 className={styles.sectionTitle}>Experiences</h1>
+            </div>
+            <div className={styles.experiences}>
+                {experiences.map((experience, id) =>
+                    <Experience key={id} experience={experience} />
+                )}
+            </div>
         </div>
     );
 }

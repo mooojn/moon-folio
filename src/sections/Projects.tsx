@@ -5,10 +5,16 @@ import { bullets } from "@/data/layout";
 
 export default function Projects() {
   return (
-    <div className={styles.projects}>
-      {projects.map((project, id) =>
-        <Card key={id} project={project} />
-      )}
+    <div className={styles.projectsSection}>
+      <div className={styles.sectionHeading}>
+        <h2 className={styles.sectionSubtitle}>Portfolio</h2>
+        <h1 className={styles.sectionTitle}>Projects</h1>
+      </div>
+      <div className={styles.projects}>
+        {projects.map((project, id) =>
+          <Card key={id} project={project} />
+        )}
+      </div>
     </div>
   );
 }
