@@ -14,7 +14,7 @@ export default function Hero() {
           </p>
         </div>
         <div className={styles.heroActions}>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=moojntariq@gmail.com" target="_blank" className={styles.btnPrimary}>Contact Now</a>
+          <a href="mailto:moojntariq@gmail.com" className={styles.btnPrimary}>Contact Now</a>
           <a href="#projects" className={styles.btnSecondary}>View Work</a>
         </div>
       </div>
