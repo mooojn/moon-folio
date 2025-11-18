@@ -4,24 +4,26 @@ export default function Hero() {
   return (
     <div className={styles.hero}>
       <div className={styles.heroContent}>
-        <div className={styles.heroText}>
-          <p className={styles.greeting}>Hello, I'm</p>
-          <h1 className={styles.heroTitle}>
-            <span className={styles.gradientText}>Full-Stack Developer</span>
+        <div className={styles.textBlock}>
+          <h1 className={styles.title}>
+            I Build <span className={styles.gradientText}>Modern Web Apps</span> & Scalable Systems
           </h1>
-          <p className={styles.heroDescription}>
-            I can develop full-stack apps, WordPress, Shopify, and more.
+
+          <p className={styles.subtitle}>
+            High-performance apps, SaaS dashboards, APIs, automations, Shopify, WordPress, and custom full-stack solutions.
           </p>
+
+          <div className={styles.actions}>
+            <a href="mailto:moojntariq@gmail.com" className={styles.btnPrimary}>Hire Me</a>
+            <a href="#projects" className={styles.btnSecondary}>View Projects</a>
+          </div>
         </div>
-        <div className={styles.heroActions}>
-          <a href="mailto:moojntariq@gmail.com" className={styles.btnPrimary}>Contact Now</a>
-          <a href="#projects" className={styles.btnSecondary}>View Work</a>
+
+        <div className={styles.heroBackground}>
+          <div className={styles.gradientOrb}></div>
+          <div className={styles.gradientOrb}></div>
+          <div className={styles.gradientOrb}></div>
         </div>
-      </div>
-      <div className={styles.heroBackground}>
-        <div className={styles.gradientOrb}></div>
-        <div className={styles.gradientOrb}></div>
-        <div className={styles.gradientOrb}></div>
       </div>
     </div>
   );
