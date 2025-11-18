@@ -27,27 +27,23 @@
 
 .footerSocials {
   display: flex;
-  gap: 18px;
+  gap: 16px;
 }
 
 .footerSocials a {
   color: var(--text);
-  font-weight: 600;
-  letter-spacing: 1.1px;
-  font-size: 1.01rem;
-  border-radius: 4px;
-  text-decoration: none;
-  opacity: 0.89;
-  padding: 2px 4px;
-  transition: color 0.2s, opacity 0.18s, text-decoration 0.17s, background 0.15s;
-  display: inline-block;
+  opacity: 0.85;
+  border-radius: 50%;
+  padding: 5px;
+  transition: background 0.18s, color 0.18s, opacity 0.18s, box-shadow 0.2s;
+  display: flex;
 }
+
 .footerSocials a:hover {
   color: #007bff;
-  opacity: 1;
   background: var(--bg-light);
-  text-decoration: underline 2px #007bff;
-  text-underline-offset: 3px;
+  opacity: 1;
+  box-shadow: 0 2px 12px rgba(0,123,255,0.10);
 }
 
 .footerSocials svg {

@@ -10,12 +10,15 @@
 
   --text: hsl(0 0% 0%);
   --text-muted: hsl(0 0% 40%);
-
+  
   --per: 92%;
   --hover-bg: linear-gradient(var(--bg-light) 50%, var(--bg));
   --size-sub: 0.8rem;
   --size-head: 1.8rem;
   --size-text: 1.2rem;
+
+  --navbar-bg: rgba(255, 255, 255, 0.78);  /* lighter, more visible white */
+  --navbar-border: rgba(26, 26, 26, 0.10); /* subtle dark border */
 }
 
 [data-theme="dark"] {
@@ -26,6 +29,8 @@
 
   --text: hsl(0 0% 95%);
   --text-muted: hsl(0 0% 70%);
+  --navbar-bg: rgba(38, 39, 44, 0.48); /* darker for dark mode */
+  --navbar-border: rgba(255, 255, 255, 0.16);
 }
 
 * {

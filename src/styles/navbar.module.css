@@ -17,9 +17,9 @@
   padding: 18px 20px;
   border-radius: 22px;
 
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--navbar-bg);
   backdrop-filter: blur(2px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--navbar-border);
 }
 
 .navbar ul {
