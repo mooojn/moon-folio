@@ -15,7 +15,7 @@ export default function Hero() {
 
           <div className={styles.actions}>
             <a href="mailto:moojntariq@gmail.com" className={styles.btnPrimary}>Hire Me</a>
-            <a href="#projects" className={styles.btnSecondary}>View Projects</a>
+            <a href="/about" className={styles.btnSecondary}>About Me</a>
           </div>
         </div>
 

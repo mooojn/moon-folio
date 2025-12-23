@@ -1,0 +1,101 @@
+{
+    "name": "Munees Tariq",
+    "title": "Full-Stack Developer",
+    "tagline": "Building Modern Web Experiences",
+    "education": {
+        "degree": "BSCS",
+        "institution": "University of Engineering and Technology, Lahore",
+        "graduationYear": "2027",
+        "description": "Pursuing Bachelor of Science in Computer Science with focus on software engineering, web development, and database systems."
+    },
+    "bio": "I'm a full-stack developer from Pakistan, specializing in building high-performance web applications, SaaS dashboards, and scalable backend systems. I love turning complex problems into elegant, user-friendly solutions.",
+    "skills": [
+        {
+            "name": "React.js",
+            "level": 90,
+            "category": "Frontend"
+        },
+        {
+            "name": "Next.js",
+            "level": 85,
+            "category": "Frontend"
+        },
+        {
+            "name": "TypeScript",
+            "level": 85,
+            "category": "Language"
+        },
+        {
+            "name": "JavaScript",
+            "level": 95,
+            "category": "Language"
+        },
+        {
+            "name": "Node.js",
+            "level": 80,
+            "category": "Backend"
+        },
+        {
+            "name": "C#",
+            "level": 85,
+            "category": "Language"
+        },
+        {
+            "name": "ASP.NET",
+            "level": 80,
+            "category": "Backend"
+        },
+        {
+            "name": "SQL Server",
+            "level": 85,
+            "category": "Database"
+        },
+        {
+            "name": "WordPress",
+            "level": 90,
+            "category": "CMS"
+        },
+        {
+            "name": "Shopify",
+            "level": 75,
+            "category": "E-commerce"
+        },
+        {
+            "name": "REST APIs",
+            "level": 90,
+            "category": "Backend"
+        },
+        {
+            "name": "Git",
+            "level": 85,
+            "category": "Tools"
+        }
+    ],
+    "stats": [
+        {
+            "value": "20+",
+            "label": "Projects Completed"
+        },
+        {
+            "value": "5+",
+            "label": "Client Experiences"
+        },
+        {
+            "value": "2027",
+            "label": "Expected Graduation"
+        },
+        {
+            "value": "25+",
+            "label": "Technologies Mastered"
+        }
+    ],
+    "highlights": [
+        "Led development teams of up to 6 members",
+        "Improved SEO rankings for clients by 80%",
+        "Reduced page load times by 60%",
+        "Built ACID-compliant database systems"
+    ],
+    "contact": {
+        "email": "moojntariq@gmail.com"
+    }
+}
