@@ -98,5 +98,39 @@
             }
         ],
         "image": "./projects/3.png"
+    },
+    {
+        "category": "Events Services",
+        "title": "PhotoBooth Desktop App for Events",
+        "description": "Developed a custom desktop PhotoBooth application for event use, focused on fast capture, brand customization, and instant guest sharing.",
+        "metrics": [
+            {
+                "name": "Capture Flow Time",
+                "value": "10s to 6s"
+            },
+            {
+                "name": "Project Duration",
+                "value": "6 weeks"
+            }
+        ],
+        "features": [
+            "Photo, GIF, and Boomerang capture modes",
+            "Faster capture workflow (optimized countdown and review timing)",
+            "Branded overlays (text, images, shapes) with live preview",
+            "Multiple capture layouts: Portrait, Landscape, Square",
+            "Cloud upload and QR code sharing via Supabase",
+            "Camera source selection (webcam + Canon DSLR utility)",
+            "OpenBooth kiosk mode with locked interface and auto-reset",
+            "Event-wise session storage and quick gallery access"
+        ],
+        "technologies": [
+            "Electron",
+            "React",
+            "Node.js",
+            "FFmpeg",
+            "Supabase"
+        ],
+        "actions": [],
+        "image": "./projects/4.jpeg"
     }
 ]

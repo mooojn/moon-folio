@@ -3,13 +3,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
-  margin-bottom: 50px;
+  margin: 100px 0 60px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.sectionBackdrop {
+  position: absolute;
+  inset: 40px auto auto 50%;
+  width: min(980px, 96vw);
+  height: 420px;
+  transform: translateX(-50%);
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(0, 194, 255, 0.2), transparent 44%),
+    radial-gradient(circle at 84% 65%, rgba(255, 140, 77, 0.18), transparent 48%),
+    linear-gradient(135deg, var(--bg-light), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .sectionHeading {
   width: var(--per);
-  margin-bottom: 60px;
+  margin-bottom: 52px;
   text-align: left;
 }
 
@@ -38,49 +55,197 @@
   left: 0;
   width: 60px;
   height: 4px;
-  background: linear-gradient(135deg, #007bff, #00c6ff);
+  background: linear-gradient(135deg, #0085ff, #00d1b2);
   border-radius: 2px;
 }
 
+.sectionDescription {
+  margin-top: 20px;
+  max-width: 720px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
 .experiences {
-  display: flex;
+  width: min(var(--per), 1120px);
+  position: relative;
+  display: grid;
   flex-direction: column;
-  gap: 50px;
-  width: var(--per);
+  gap: 24px;
+  padding: 6px 0;
+}
+
+.experiences::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #00c2ff, #0066ff 45%, #00d1b2);
+  opacity: 0.35;
 }
 
 .experience {
-  display: flex;
-  flex-direction: column;
-  /* background: red; */
-  width: var(--per);
-  border-radius: 22px;
-  padding: 30px;
-  margin: 0 auto;
-
-  background: var(--hover-bg);
-  background-size: 100% 200%;
-  background-position: 0 0;
-  transition: all 0.6s ease-in-out;
+  position: relative;
+  margin-left: 44px;
+  border-radius: 24px;
+  padding: 24px 26px 24px;
+  backdrop-filter: blur(8px);
+  border: 1px solid color-mix(in oklab, var(--text) 14%, transparent);
+  background:
+    linear-gradient(135deg, color-mix(in oklab, var(--bg-light) 68%, transparent), color-mix(in oklab, var(--bg) 82%, transparent));
+  box-shadow:
+    0 22px 40px rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.25) inset;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
 }
 
 .experience:hover {
-  background-position: 100% 50%;
-  scale: 1.02;
+  transform: translateY(-5px);
+  border-color: color-mix(in oklab, #00b7ff 34%, var(--text) 8%);
+  box-shadow:
+    0 28px 50px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(0, 199, 255, 0.2) inset;
 }
 
-.experience h3 {
-  color: var(--text-muted);
-  font-size: var(--size-sub);
+.timelineDot {
+  position: absolute;
+  left: -38px;
+  top: 31px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid color-mix(in oklab, var(--bg-dark) 55%, #00a5ff);
+  background: linear-gradient(135deg, #00c2ff, #0085ff);
+  box-shadow: 0 0 0 6px color-mix(in oklab, #00c2ff 20%, transparent);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cardIndex {
+  min-width: 46px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: color-mix(in oklab, var(--text-muted) 85%, #00a5ff);
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.roleBadge,
+.periodBadge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.roleBadge {
+  color: #ffffff;
+  background: linear-gradient(135deg, #0078ff, #00b8ff);
+  box-shadow: 0 8px 16px rgba(0, 132, 255, 0.26);
+}
+
+.periodBadge {
+  color: var(--text);
+  border-color: color-mix(in oklab, var(--text-muted) 30%, transparent);
+  background: color-mix(in oklab, var(--bg-light) 55%, transparent);
 }
 
 .experience h2 {
-  font-size: var(--size-head);
+  margin-top: 14px;
+  font-size: clamp(1.28rem, 1.9vw, 1.62rem);
+  line-height: 1.3;
+  letter-spacing: 0.01em;
 }
 
-.experience  ul{
-  margin-top: 5px;
+.points {
+  margin-top: 15px;
+  display: grid;
+  gap: 11px;
 }
-.experience ul li {
-  margin-top: 10px;
+
+.points li {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 8px;
+  align-items: start;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: color-mix(in oklab, var(--text) 92%, var(--text-muted));
+}
+
+.pointIcon {
+  color: #00a9ff;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 900px) {
+  .sectionTitle {
+    font-size: 2.35rem;
+  }
+
+  .sectionDescription {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .experience {
+    margin-left: 38px;
+    padding: 22px 20px;
+  }
+
+  .timelineDot {
+    left: -32px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .experiencesSection {
+    margin-top: 74px;
+  }
+
+  .sectionHeading {
+    margin-bottom: 30px;
+  }
+
+  .sectionTitle {
+    font-size: 1.95rem;
+  }
+
+  .experiences::before {
+    left: 11px;
+  }
+
+  .experience {
+    margin-left: 28px;
+    border-radius: 20px;
+  }
+
+  .timelineDot {
+    left: -23px;
+    width: 13px;
+    height: 13px;
+    border-width: 2px;
+  }
+
+  .points li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
 }
