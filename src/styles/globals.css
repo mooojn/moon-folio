@@ -63,6 +63,19 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Custom text selection highlight color */
+::selection {
+  background: rgba(124, 92, 246, 0.45);
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+}
+
+::-moz-selection {
+  background: rgba(124, 92, 246, 0.45);
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+}
+
 body {
   font-family: var(--font-sans);
   background: var(--void);
@@ -71,6 +84,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   line-height: 1.6;
+}
+
+/* Hide default cursor on desktop when custom cursor is active */
+@media (pointer: fine) {
+  html, body, a, button, input, textarea, select, [role="button"] {
+    cursor: none !important;
+  }
 }
 
 a {
