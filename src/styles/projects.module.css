@@ -1,312 +1,334 @@
+/* ===== PROJECTS SECTION ===== */
 .projectsSection {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 100px 0 60px;
+  padding: 130px 0 100px;
   position: relative;
-  overflow: hidden;
-  isolation: isolate;
 }
 
-.sectionBackdrop {
+.inner {
+  width: var(--container);
+  margin: 0 auto;
+}
+
+/* Ambient gradient bleed */
+.sectionAmbient {
   position: absolute;
-  inset: 36px auto auto 50%;
-  width: min(1140px, 98vw);
-  height: 560px;
+  top: 0;
+  left: 50%;
   transform: translateX(-50%);
-  border-radius: 42px;
-  background:
-    radial-gradient(circle at 12% 25%, rgba(0, 153, 255, 0.22), transparent 38%),
-    radial-gradient(circle at 86% 75%, rgba(0, 219, 180, 0.18), transparent 43%),
-    linear-gradient(145deg, var(--bg-light), transparent 60%);
-  z-index: -1;
+  width: 1200px;
+  height: 600px;
+  background: radial-gradient(
+    ellipse at 20% 40%,
+    rgba(124, 92, 246, 0.08) 0%,
+    transparent 55%
+  ),
+  radial-gradient(
+    ellipse at 80% 60%,
+    rgba(34, 211, 238, 0.06) 0%,
+    transparent 50%
+  );
   pointer-events: none;
+  z-index: 0;
 }
 
+/* ===== HEADING ===== */
 .sectionHeading {
-  width: var(--per);
-  margin-bottom: 44px;
-  text-align: left;
+  margin-bottom: 64px;
+  position: relative;
+  z-index: 1;
 }
 
-.sectionSubtitle {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-muted);
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
+  color: var(--violet-bright);
+  margin-bottom: 16px;
+}
+
+.sectionLabel::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--violet-bright);
 }
 
 .sectionTitle {
-  font-size: 3rem;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
   font-weight: 700;
-  color: var(--text);
-  line-height: 1.2;
-  position: relative;
-  display: inline-block;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  color: var(--text-1);
 }
 
-.sectionTitle::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(135deg, #008dff, #00d4aa);
-  border-radius: 2px;
-}
-
-.sectionDescription {
-  margin-top: 20px;
-  max-width: 720px;
+.sectionDesc {
+  margin-top: 16px;
   font-size: 1.05rem;
-  line-height: 1.68;
-  color: var(--text-muted);
+  line-height: 1.75;
+  color: var(--text-2);
+  max-width: 540px;
 }
 
-.projects {
-  width: min(var(--per), 1160px);
+/* ===== GRID ===== */
+.projectsGrid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 26px;
-  align-items: stretch;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  position: relative;
+  z-index: 1;
 }
 
-.project {
-  border-radius: 24px;
-  padding: 20px 20px 22px;
-  background:
-    linear-gradient(145deg, color-mix(in oklab, var(--bg-light) 72%, transparent), color-mix(in oklab, var(--bg) 84%, transparent));
-  border: 1px solid color-mix(in oklab, var(--text) 12%, transparent);
-  box-shadow:
-    0 22px 36px rgba(0, 0, 0, 0.08),
-    0 1px 0 rgba(255, 255, 255, 0.18) inset;
+/* ===== CARD ===== */
+.card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.038) 0%,
+    rgba(255, 255, 255, 0.012) 100%
+  );
+  border: 1px solid var(--border-2);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s var(--ease-smooth);
+  cursor: default;
+  /* 3D perspective */
+  transform-style: preserve-3d;
 }
 
-.project:hover {
-  transform: translateY(-5px);
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(124,92,246,0.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card:hover {
+  border-color: rgba(124, 92, 246, 0.3);
   box-shadow:
-    0 30px 44px rgba(0, 0, 0, 0.12),
-    0 0 0 1px rgba(0, 169, 255, 0.22) inset;
-  border-color: color-mix(in oklab, #00b8ff 30%, var(--text) 8%);
+    0 0 0 1px rgba(124,92,246,0.1) inset,
+    0 40px 80px rgba(0,0,0,0.5),
+    0 0 60px rgba(124, 92, 246, 0.08);
+  transform: translateY(-8px);
 }
 
-.cardHeader {
+.card:hover::before { opacity: 1; }
+
+/* Spotlight shimmer that follows mouse (added via JS) */
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(124, 92, 246, 0.07),
+    transparent 60%
+  );
+  opacity: 0;
+}
+
+.card:hover .cardGlow { opacity: 1; }
+
+/* ===== IMAGE ===== */
+.cardImage {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  aspect-ratio: 16 / 9;
+  background: var(--surface-3);
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-smooth);
+  display: block;
+}
+
+.card:hover .cardImage img { transform: scale(1.06); }
+
+.cardImageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(6,6,8,0.75) 0%,
+    rgba(6,6,8,0.1) 40%,
+    transparent 70%
+  );
+}
+
+/* ===== BODY ===== */
+.cardBody {
+  padding: 24px 24px 28px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.cardMeta {
+  display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
   margin-bottom: 14px;
 }
 
 .cardIndex {
-  font-size: 0.82rem;
-  letter-spacing: 0.12em;
-  font-weight: 700;
-  color: color-mix(in oklab, var(--text-muted) 90%, #00a5ff);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-3);
+  letter-spacing: 0.1em;
 }
 
 .categoryBadge {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #ffffff;
-  background: linear-gradient(135deg, #0076ff, #00b8ff);
-  padding: 8px 12px;
+  padding: 5px 12px;
   border-radius: 999px;
-  box-shadow: 0 8px 14px rgba(0, 123, 255, 0.26);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, rgba(124,92,246,0.22), rgba(34,211,238,0.18));
+  border: 1px solid rgba(124,92,246,0.3);
+  color: var(--violet-bright);
 }
 
-.projectImage {
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 18px;
-  margin-bottom: 14px;
-  position: relative;
+.cardTitle {
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  color: var(--text-1);
+  margin-bottom: 10px;
 }
 
-.projectImage::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.28), transparent 42%);
-  pointer-events: none;
+.cardDesc {
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--text-2);
+  margin-bottom: 18px;
 }
 
-.project img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  border-radius: 18px;
-  transition: transform 0.45s ease;
-}
-
-.project:hover img {
-  transform: scale(1.04);
-}
-
-.project h1 {
-  font-size: clamp(1.15rem, 1.7vw, 1.52rem);
-  line-height: 1.35;
-  letter-spacing: 0.01em;
-}
-
-.project p {
-  margin-top: 9px;
-  font-size: 1rem;
-  line-height: 1.62;
-  color: color-mix(in oklab, var(--text) 90%, var(--text-muted));
-}
-
-.projectMetrics {
+/* ===== METRICS ===== */
+.metrics {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px;
-  margin: 16px 0 8px;
+  gap: 10px;
+  margin-bottom: 18px;
 }
 
 .metric {
-  display: grid;
-  gap: 4px;
-  min-width: 122px;
-  padding: 11px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 16px;
   border-radius: 12px;
-  background:
-    linear-gradient(135deg, rgba(0, 123, 255, 0.92), rgba(0, 199, 255, 0.96));
-  box-shadow: 0 8px 15px rgba(0, 132, 255, 0.28);
+  background: linear-gradient(135deg, rgba(124,92,246,0.15), rgba(34,211,238,0.1));
+  border: 1px solid rgba(124,92,246,0.2);
+  min-width: 110px;
 }
 
 .metricValue {
-  font-size: 1.12rem;
-  font-weight: 700;
-  color: white;
-  line-height: 1.1;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--violet-bright);
+  line-height: 1;
 }
 
 .metricLabel {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.94);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
+  color: var(--text-3);
 }
 
-.projectFeatures {
-  margin-top: 12px;
+/* ===== FEATURES ===== */
+.features {
+  list-style: none;
   display: grid;
-  gap: 10px;
-}
-
-.projectFeatures li {
-  display: grid;
-  grid-template-columns: 20px 1fr;
   gap: 8px;
-  align-items: start;
-  font-size: 0.98rem;
-  line-height: 1.48;
-  color: color-mix(in oklab, var(--text) 92%, var(--text-muted));
+  margin-bottom: 18px;
 }
 
-.featureIcon {
-  color: #00a9ff;
-  line-height: 1.2;
+.features li {
+  display: flex;
+  gap: 10px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-2);
 }
 
-.projectTechnologies {
+.featureDot {
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--cyan);
+  margin-top: 8px;
+}
+
+/* ===== TECH TAGS ===== */
+.techs {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
-  list-style: none;
-  padding: 0;
-  margin: 14px 0 0;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-2);
 }
 
-.projectTechnologies li {
-  background: color-mix(in oklab, var(--bg-light) 75%, transparent);
-  color: var(--text);
-  padding: 6px 11px;
-  border-radius: 20px;
-  border: 1px solid color-mix(in oklab, var(--text) 14%, transparent);
-  font-size: 0.83rem;
+.tech {
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 0.76rem;
   font-weight: 500;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  font-family: var(--font-mono);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-2);
+  color: var(--text-3);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
-.projectTechnologies li:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in oklab, #00a5ff 42%, transparent);
+.tech:hover {
+  color: var(--violet-bright);
+  border-color: rgba(124,92,246,0.3);
+  background: rgba(124,92,246,0.07);
 }
 
-.projectActions {
+/* ===== ACTIONS ===== */
+.actions {
   margin-top: 16px;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
   gap: 10px;
+  justify-content: flex-end;
 }
 
-@media screen and (max-width: 1024px) {
-  .projects {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-
-  .sectionTitle {
-    font-size: 2.4rem;
-  }
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .projectsGrid { grid-template-columns: 1fr; }
 }
 
-@media screen and (max-width: 640px) {
-  .projectsSection {
-    margin-top: 74px;
-  }
-
-  .sectionHeading {
-    margin-bottom: 30px;
-  }
-
-  .sectionTitle {
-    font-size: 2rem;
-  }
-
-  .sectionDescription {
-    font-size: 0.98rem;
-    line-height: 1.6;
-  }
-
-  .project {
-    padding: 15px 14px 18px;
-    border-radius: 18px;
-  }
-
-  .project img {
-    aspect-ratio: 16 / 11;
-  }
-
-  .project h1 {
-    font-size: 1.15rem;
-  }
-
-  .project p {
-    font-size: 0.94rem;
-  }
-
-  .projectFeatures li {
-    font-size: 0.9rem;
-  }
-
-  .metric {
-    min-width: 110px;
-    padding: 10px 11px;
-  }
-
-  .projectActions {
-    justify-content: flex-start;
-  }
+@media (max-width: 640px) {
+  .projectsSection { padding: 90px 0 70px; }
+  .sectionHeading { margin-bottom: 44px; }
+  .cardBody { padding: 18px 18px 22px; }
 }

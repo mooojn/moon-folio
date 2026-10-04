@@ -1,59 +1,95 @@
-import styles from "@/styles/experiences.module.css";
-import { bullets } from "@/data/layout";
-import experiences from "@/data/experiences.json";
+'use client';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import styles from '@/styles/experiences.module.css';
+import experiences from '@/data/experiences.json';
 
 type ExperienceItem = {
-    company: string;
-    period: string;
-    role: string;
-    points: string[];
+  company: string;
+  period: string;
+  role: string;
+  points: string[];
+};
+
+const containerVariants: Record<string, any> = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.16 } },
+};
+
+const cardVariants: Record<string, any> = {
+  hidden: { opacity: 0, x: -30 },
+  visible: {
+    opacity: 1, x: 0,
+    transition: { duration: 0.7, ease: 'easeOut' },
+  },
 };
 
 export default function Experiences() {
-    return (
-        <section className={styles.experiencesSection}>
-            <div className={styles.sectionBackdrop} />
-            <div className={styles.sectionHeading}>
-                <h2 className={styles.sectionSubtitle}>Career</h2>
-                <h1 className={styles.sectionTitle}>Experiences</h1>
-                <p className={styles.sectionDescription}>
-                    Hands-on roles where I shipped measurable improvements, from product performance
-                    and SEO growth to scalable delivery across teams.
-                </p>
-            </div>
-            <div className={styles.experiences}>
-                {experiences.map((experience, id) =>
-                    <Experience
-                        key={id}
-                        experience={experience as ExperienceItem}
-                        index={id}
-                    />
-                )}
-            </div>
-        </section>
-    );
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: '-80px' });
+
+  return (
+    <section className={styles.experiencesSection}>
+      <div className={styles.sectionAmbient} />
+      <div className={styles.inner}>
+        <motion.div
+          className={styles.sectionHeading}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <p className={styles.sectionLabel}>Career</p>
+          <h2 className={styles.sectionTitle}>Experience</h2>
+          <p className={styles.sectionDesc}>
+            Hands-on roles where I shipped measurable improvements — from product
+            performance and SEO growth to scalable delivery across teams.
+          </p>
+        </motion.div>
+
+        <motion.div
+          ref={ref}
+          className={styles.timeline}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+        >
+          {experiences.map((exp, i) => (
+            <ExperienceCard
+              key={i}
+              experience={exp as ExperienceItem}
+              index={i}
+            />
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
 }
 
-function Experience({ experience, index }: { experience: ExperienceItem; index: number }) {
-    return (
-        <article className={styles.experience}>
-            <span className={styles.timelineDot} />
-            <div className={styles.cardHeader}>
-                <span className={styles.cardIndex}>{String(index + 1).padStart(2, "0")}</span>
-                <div className={styles.badges}>
-                    <span className={styles.roleBadge}>{experience.role}</span>
-                    <span className={styles.periodBadge}>{experience.period}</span>
-                </div>
-            </div>
-            <h2>{experience.company}</h2>
-            <ul className={styles.points}>
-                {experience.points.map((point, id) =>
-                    <li key={id}>
-                        <span className={styles.pointIcon}>{bullets[1]}</span>
-                        <span>{point}</span>
-                    </li>
-                )}
-            </ul>
-        </article>
-    );
+function ExperienceCard({ experience, index }: { experience: ExperienceItem; index: number }) {
+  return (
+    <motion.article className={styles.card} variants={cardVariants}>
+      <span className={styles.dot} />
+
+      <div className={styles.cardHeader}>
+        <span className={styles.cardIndex}>{String(index + 1).padStart(2, '0')}</span>
+        <div className={styles.badges}>
+          <span className={styles.roleBadge}>{experience.role}</span>
+          <span className={styles.periodBadge}>{experience.period}</span>
+        </div>
+      </div>
+
+      <h3 className={styles.company}>{experience.company}</h3>
+
+      <ul className={styles.points}>
+        {experience.points.map((point, i) => (
+          <li key={i}>
+            <span className={styles.pointDot} />
+            <span>{point}</span>
+          </li>
+        ))}
+      </ul>
+    </motion.article>
+  );
 }

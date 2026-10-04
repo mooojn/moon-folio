@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 import styles from "@/styles/about.module.css";
 import aboutData from "@/data/about.json";
 import experiencesData from "@/data/experiences.json";
@@ -78,31 +79,7 @@ export default function About() {
                 />
             </Head>
 
-            {/* Navigation Back */}
-            <nav style={{
-                position: 'fixed',
-                top: '20px',
-                left: '20px',
-                zIndex: 100
-            }}>
-                <Link href="/" style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '10px 20px',
-                    background: 'var(--navbar-bg)',
-                    backdropFilter: 'blur(10px)',
-                    borderRadius: '50px',
-                    border: '1px solid var(--navbar-border)',
-                    color: 'var(--text)',
-                    fontSize: '0.9rem',
-                    fontWeight: '500',
-                    textDecoration: 'none',
-                    transition: 'transform 0.2s ease'
-                }}>
-                    ← Back to Home
-                </Link>
-            </nav>
+            <Navbar />
 
             <main className={styles.about}>
                 {/* Background Orbs */}

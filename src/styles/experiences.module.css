@@ -1,141 +1,165 @@
+/* ===== EXPERIENCES SECTION ===== */
 .experiencesSection {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 100px 0 60px;
+  padding: 100px 0 120px;
   position: relative;
-  overflow: hidden;
-  isolation: isolate;
 }
 
-.sectionBackdrop {
+.sectionAmbient {
   position: absolute;
-  inset: 40px auto auto 50%;
-  width: min(980px, 96vw);
-  height: 420px;
-  transform: translateX(-50%);
-  border-radius: 36px;
-  background:
-    radial-gradient(circle at 18% 24%, rgba(0, 194, 255, 0.2), transparent 44%),
-    radial-gradient(circle at 84% 65%, rgba(255, 140, 77, 0.18), transparent 48%),
-    linear-gradient(135deg, var(--bg-light), transparent 60%);
+  top: 0;
+  right: 0;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    ellipse at 80% 20%,
+    rgba(245, 158, 11, 0.07) 0%,
+    transparent 60%
+  );
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 }
 
+.inner {
+  width: var(--container);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== HEADING ===== */
 .sectionHeading {
-  width: var(--per);
-  margin-bottom: 52px;
-  text-align: left;
+  margin-bottom: 72px;
 }
 
-.sectionSubtitle {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-muted);
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
+  color: var(--amber);
+  margin-bottom: 16px;
+}
+
+.sectionLabel::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--amber);
 }
 
 .sectionTitle {
-  font-size: 3rem;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
   font-weight: 700;
-  color: var(--text);
-  line-height: 1.2;
-  position: relative;
-  display: inline-block;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  color: var(--text-1);
 }
 
-.sectionTitle::after {
+.sectionDesc {
+  margin-top: 16px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-2);
+  max-width: 540px;
+}
+
+/* ===== TIMELINE LAYOUT ===== */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Vertical line */
+.timeline::before {
   content: '';
   position: absolute;
-  bottom: -8px;
   left: 0;
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(135deg, #0085ff, #00d1b2);
-  border-radius: 2px;
+  top: 24px;
+  bottom: 24px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(124, 92, 246, 0.4) 10%,
+    rgba(245, 158, 11, 0.4) 50%,
+    rgba(34, 211, 238, 0.3) 90%,
+    transparent 100%
+  );
 }
 
-.sectionDescription {
-  margin-top: 20px;
-  max-width: 720px;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--text-muted);
-}
-
-.experiences {
-  width: min(var(--per), 1120px);
-  position: relative;
-  display: grid;
-  flex-direction: column;
-  gap: 24px;
-  padding: 6px 0;
-}
-
-.experiences::before {
-  content: "";
-  position: absolute;
-  left: 14px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, #00c2ff, #0066ff 45%, #00d1b2);
-  opacity: 0.35;
-}
-
-.experience {
+/* ===== EXPERIENCE CARD ===== */
+.card {
   position: relative;
   margin-left: 44px;
-  border-radius: 24px;
-  padding: 24px 26px 24px;
-  backdrop-filter: blur(8px);
-  border: 1px solid color-mix(in oklab, var(--text) 14%, transparent);
-  background:
-    linear-gradient(135deg, color-mix(in oklab, var(--bg-light) 68%, transparent), color-mix(in oklab, var(--bg) 82%, transparent));
-  box-shadow:
-    0 22px 40px rgba(0, 0, 0, 0.08),
-    0 1px 0 rgba(255, 255, 255, 0.25) inset;
-  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  padding: 30px 32px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.036) 0%,
+    rgba(255,255,255,0.01) 100%
+  );
+  border: 1px solid var(--border-2);
+  margin-bottom: 24px;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s var(--ease-smooth);
 }
 
-.experience:hover {
-  transform: translateY(-5px);
-  border-color: color-mix(in oklab, #00b7ff 34%, var(--text) 8%);
+.card:last-child { margin-bottom: 0; }
+
+.card:hover {
+  border-color: rgba(245, 158, 11, 0.22);
   box-shadow:
-    0 28px 50px rgba(0, 0, 0, 0.12),
-    0 0 0 1px rgba(0, 199, 255, 0.2) inset;
+    0 0 0 1px rgba(245,158,11,0.07) inset,
+    0 32px 60px rgba(0,0,0,0.4),
+    0 0 50px rgba(245, 158, 11, 0.06);
+  transform: translateX(6px);
 }
 
-.timelineDot {
+/* ===== TIMELINE DOT ===== */
+.dot {
   position: absolute;
-  left: -38px;
-  top: 31px;
-  width: 16px;
-  height: 16px;
+  left: -52px;
+  top: 34px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  border: 3px solid color-mix(in oklab, var(--bg-dark) 55%, #00a5ff);
-  background: linear-gradient(135deg, #00c2ff, #0085ff);
-  box-shadow: 0 0 0 6px color-mix(in oklab, #00c2ff 20%, transparent);
+  background: linear-gradient(135deg, var(--violet), var(--cyan));
+  box-shadow:
+    0 0 0 4px rgba(124,92,246,0.15),
+    0 0 20px rgba(124,92,246,0.3);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+.card:hover .dot {
+  box-shadow:
+    0 0 0 6px rgba(245,158,11,0.15),
+    0 0 30px rgba(245,158,11,0.4);
+  background: linear-gradient(135deg, var(--amber), #f97316);
+  transform: scale(1.2);
+}
+
+/* ===== CARD HEADER ===== */
 .cardHeader {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
 .cardIndex {
-  min-width: 46px;
-  font-size: 0.86rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: color-mix(in oklab, var(--text-muted) 85%, #00a5ff);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-3);
+  letter-spacing: 0.1em;
 }
 
 .badges {
@@ -144,108 +168,66 @@
   flex-wrap: wrap;
 }
 
-.roleBadge,
-.periodBadge {
-  font-size: 0.8rem;
-  font-weight: 600;
-  line-height: 1;
-  padding: 9px 12px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-}
-
 .roleBadge {
-  color: #ffffff;
-  background: linear-gradient(135deg, #0078ff, #00b8ff);
-  box-shadow: 0 8px 16px rgba(0, 132, 255, 0.26);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(245,158,11,0.18), rgba(249,115,22,0.14));
+  border: 1px solid rgba(245,158,11,0.28);
+  color: var(--amber);
 }
 
 .periodBadge {
-  color: var(--text);
-  border-color: color-mix(in oklab, var(--text-muted) 30%, transparent);
-  background: color-mix(in oklab, var(--bg-light) 55%, transparent);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-2);
+  color: var(--text-3);
 }
 
-.experience h2 {
-  margin-top: 14px;
-  font-size: clamp(1.28rem, 1.9vw, 1.62rem);
-  line-height: 1.3;
-  letter-spacing: 0.01em;
+/* ===== COMPANY NAME ===== */
+.company {
+  font-size: clamp(1.28rem, 2.2vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--text-1);
+  margin-bottom: 16px;
 }
 
+/* ===== POINTS ===== */
 .points {
-  margin-top: 15px;
+  list-style: none;
   display: grid;
-  gap: 11px;
+  gap: 10px;
 }
 
 .points li {
-  display: grid;
-  grid-template-columns: 20px 1fr;
-  gap: 8px;
-  align-items: start;
-  font-size: 1rem;
-  line-height: 1.55;
-  color: color-mix(in oklab, var(--text) 92%, var(--text-muted));
+  display: flex;
+  gap: 12px;
+  font-size: 0.93rem;
+  line-height: 1.65;
+  color: var(--text-2);
+  align-items: flex-start;
 }
 
-.pointIcon {
-  color: #00a9ff;
-  font-size: 1rem;
-  line-height: 1.2;
+.pointDot {
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--amber);
+  margin-top: 9px;
+  opacity: 0.7;
 }
 
-@media screen and (max-width: 900px) {
-  .sectionTitle {
-    font-size: 2.35rem;
-  }
-
-  .sectionDescription {
-    font-size: 1rem;
-    max-width: 100%;
-  }
-
-  .experience {
-    margin-left: 38px;
-    padding: 22px 20px;
-  }
-
-  .timelineDot {
-    left: -32px;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .experiencesSection {
-    margin-top: 74px;
-  }
-
-  .sectionHeading {
-    margin-bottom: 30px;
-  }
-
-  .sectionTitle {
-    font-size: 1.95rem;
-  }
-
-  .experiences::before {
-    left: 11px;
-  }
-
-  .experience {
-    margin-left: 28px;
-    border-radius: 20px;
-  }
-
-  .timelineDot {
-    left: -23px;
-    width: 13px;
-    height: 13px;
-    border-width: 2px;
-  }
-
-  .points li {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .experiencesSection { padding: 80px 0 90px; }
+  .sectionHeading { margin-bottom: 48px; }
+  .timeline::before { left: 4px; }
+  .card { margin-left: 28px; padding: 22px 20px; }
+  .dot { left: -36px; width: 14px; height: 14px; top: 26px; }
 }

@@ -1,42 +1,85 @@
-.navbarWrap {
+/* ===== NAVBAR ===== */
+.navWrap {
   position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 24px 20px 0;
+  pointer-events: none;
 }
 
 .navbar {
-  width: 350px;
+  pointer-events: all;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 18px 20px;
-  border-radius: 22px;
-
-  background: var(--navbar-bg);
-  backdrop-filter: blur(2px);
-  border: 1px solid var(--navbar-border);
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(13, 13, 18, 0.82);
+  border: 1px solid rgba(124, 92, 246, 0.18);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  box-shadow:
+    0 0 0 1px rgba(240,238,255,0.04) inset,
+    0 24px 48px rgba(0,0,0,0.5),
+    0 0 60px rgba(124, 92, 246, 0.06);
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
+.navbar:hover {
+  border-color: rgba(124, 92, 246, 0.3);
+  box-shadow:
+    0 0 0 1px rgba(240,238,255,0.06) inset,
+    0 28px 56px rgba(0,0,0,0.55),
+    0 0 80px rgba(124, 92, 246, 0.1);
 }
 
-.navbar a {
-  text-transform: capitalize;
+.navLink {
+  position: relative;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 0.88rem;
   font-weight: 500;
-  text-decoration: none;
-  transition: color 0.3s;
+  color: rgba(240, 238, 255, 0.6);
+  letter-spacing: 0.01em;
+  transition: color 0.25s ease, background 0.25s ease;
+  white-space: nowrap;
 }
 
-.navbar a:hover {
-  color: #00c6ff;
+.navLink:hover {
+  color: var(--text-1);
+  background: rgba(124, 92, 246, 0.1);
+}
+
+.navLink.active {
+  color: var(--text-1);
+  background: rgba(124, 92, 246, 0.15);
+}
+
+.navDivider {
+  width: 1px;
+  height: 18px;
+  background: rgba(240, 238, 255, 0.08);
+  flex-shrink: 0;
+}
+
+/* CTA "Hire Me" pill */
+.navCta {
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #7c5cf6, #22d3ee);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.01em;
+  transition: opacity 0.2s ease, transform 0.2s var(--ease-spring);
+  white-space: nowrap;
+}
+
+.navCta:hover {
+  opacity: 0.9;
+  transform: scale(1.04);
 }
