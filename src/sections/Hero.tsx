@@ -51,7 +51,7 @@ export default function Hero() {
           <a href="mailto:moojntariq@gmail.com" className={styles.btnPrimary}>
             Hire Me
           </a>
-          <a href="/about" className={styles.btnSecondary}>
+          <a href="#about" className={styles.btnSecondary}>
             About Me
           </a>
         </motion.div>

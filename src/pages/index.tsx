@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import Hero from "@/sections/Hero";
+import About from "@/sections/About";
 import Projects from "@/sections/Projects";
 import Experiences from "@/sections/Experiences";
 
@@ -59,6 +60,9 @@ export default function Home() {
       <main>
         <div id="home">
           <Hero />
+        </div>
+        <div id="about">
+          <About />
         </div>
         <div id="projects">
           <Projects />
