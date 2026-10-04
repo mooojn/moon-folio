@@ -60,14 +60,25 @@ export default function About() {
                 <span className={styles.profileName}>{aboutData.name}</span>
                 <span className={styles.profileRole}>{aboutData.title}</span>
               </div>
-              <span className={styles.locationBadge}>📍 Pakistan</span>
+              <span className={styles.locationBadge}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-10a8 8 0 0 1 16 0Z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>Pakistan</span>
+              </span>
             </div>
 
             <p className={styles.bioText}>{aboutData.bio}</p>
 
             {/* Education box */}
             <div className={styles.educationBox}>
-              <div className={styles.eduIcon}>🎓</div>
+              <div className={styles.eduIcon}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
               <div className={styles.eduDetails}>
                 <div className={styles.eduDegree}>{aboutData.education.degree} in Computer Science</div>
                 <div className={styles.eduSchool}>{aboutData.education.institution}</div>
@@ -116,7 +127,12 @@ export default function About() {
               <h3>Ready to build something extraordinary?</h3>
               <p>Let&apos;s turn your product vision into production-ready software.</p>
               <a href={`mailto:${aboutData.contact.email}`} className={styles.ctaButton}>
-                Let&apos;s Connect ↗
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                <span>moojntariq@gmail.com</span>
+                <span className={styles.btnArrow}>↗</span>
               </a>
             </div>
           </motion.div>
