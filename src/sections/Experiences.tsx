@@ -42,8 +42,7 @@ export default function Experiences() {
           <p className={styles.sectionLabel}>Career</p>
           <h2 className={styles.sectionTitle}>Experience</h2>
           <p className={styles.sectionDesc}>
-            Hands-on roles where I shipped measurable improvements — from product
-            performance and SEO growth to scalable delivery across teams.
+            Product work across desktop, web and machine learning — from early requirements through implementation and delivery.
           </p>
         </motion.div>
 

@@ -1,42 +1,39 @@
 [
-    {
-        "company": "UET Lahore",
-        "period": "3 months",
-        "role": "Odoo Intern",
-        "points": [
-            "Streamlined Odoo component development within a 4-member team, reducing module integration time by 25%.",
-            "Built responsive UI and social media integration modules, increasing platform usability by 30%.",
-            "Deployed end-to-end features in agile sprints, improving release efficiency by 20%."
-        ]
-    },
-    {
-        "company": "UK Business Loan Expert",
-        "period": "Project-based",
-        "role": "WordPress Developer",
-        "points": [
-            "Delivered a WordPress website that boosted loan application conversion rates by 35%.",
-            "Optimized page speed and responsiveness, reducing bounce rate by 28%.",
-            "Improved SEO rankings, moving 10+ target keywords into the top 5 positions on Google UK."
-        ]
-    },
-    {
-        "company": "UAE Construction Company",
-        "period": "Project-based",
-        "role": "WordPress Developer",
-        "points": [
-            "Developed a corporate site that increased client inquiries by 40% within the first quarter.",
-            "Implemented scalable navigation and mobile-first design, enhancing mobile traffic share by 32%.",
-            "Reduced site maintenance overhead by 25% through modular WordPress architecture."
-        ]
-    },
-    {
-        "company": "UAE Fire Management Company",
-        "period": "Project-based",
-        "role": "WordPress Developer",
-        "points": [
-            "Migrated 100+ static HTML/CSS pages to WordPress with 0% downtime during transition.",
-            "Enhanced SEO performance by 80%, driving a 2.5x increase in organic traffic within 6 months.",
-            "Optimized hosting and caching, reducing average page load time from 4.2s to 1.6s."
-        ]
-    }
+  {
+    "company": "Photo Booth Software · US Events Client",
+    "period": "Oct 2024 — Mar 2026",
+    "role": "Lead Engineer & Architect · Freelance",
+    "points": [
+      "Architected and built an end-to-end photo booth desktop product with a two-person team using Electron, React and Node.js.",
+      "Connected Canon cameras through a C# helper around the Canon EDSDK, with IPC for live view, capture and camera settings.",
+      "Built editing, overlays, GIF and boomerang exports with FFmpeg, print output, Supabase event storage and QR-code sharing."
+    ]
+  },
+  {
+    "company": "Freelance Web Development · UK, UAE & US",
+    "period": "Jun 2024 — Present",
+    "role": "Freelance Web Developer",
+    "points": [
+      "Designed and delivered responsive business websites with WordPress, Shopify and Sanity CMS, working directly with clients through requirements and revisions.",
+      "Selected live work: AMW FM, Simply Divines, SSS Fire and Aurelina Jewels."
+    ]
+  },
+  {
+    "company": "Course Demand Prediction Model",
+    "period": "Apr 2024 — Sep 2024",
+    "role": "Machine Learning Developer · Freelance",
+    "points": [
+      "Built a Python forecasting system using FastAPI, pandas and NumPy to predict course demand from historical booking data.",
+      "Developed instructor allocation and scheduling logic with availability tracking and profitability scoring, exposed through a REST API and dashboard."
+    ]
+  },
+  {
+    "company": "UET SINCSOL · University of Engineering & Technology, Lahore",
+    "period": "Oct 2023 — Mar 2024",
+    "role": "Software Development Intern",
+    "points": [
+      "Contributed responsive interface components and social media integration modules to an Odoo-based NGO project with a four-person team.",
+      "Worked across Python, XML and PostgreSQL in a collaborative product development workflow."
+    ]
+  }
 ]

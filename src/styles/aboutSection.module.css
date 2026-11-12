@@ -15,8 +15,8 @@
   height: 500px;
   background: radial-gradient(
     ellipse at center,
-    rgba(124, 92, 246, 0.09) 0%,
-    rgba(34, 211, 238, 0.04) 50%,
+    rgba(23, 79, 229, 0.09) 0%,
+    rgba(135, 167, 255, 0.06) 50%,
     transparent 75%
   );
   pointer-events: none;
@@ -43,7 +43,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--violet-bright);
+  color: var(--amber);
   margin-bottom: 16px;
 }
 
@@ -52,11 +52,12 @@
   display: block;
   width: 28px;
   height: 1px;
-  background: var(--violet-bright);
+  background: var(--amber);
 }
 
 .title {
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-family: var(--font-display);
+  font-size: clamp(2.7rem, 5.5vw, 4.2rem);
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.1;
@@ -64,10 +65,7 @@
 }
 
 .titleGradient {
-  background: linear-gradient(135deg, var(--violet-bright) 0%, var(--cyan) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--amber);
 }
 
 .subtitle {
@@ -89,17 +87,13 @@
 /* Bio Card */
 .bioCard {
   border-radius: var(--radius-lg);
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.035) 0%,
-    rgba(255, 255, 255, 0.01) 100%
-  );
+  background: #f7f6f3;
   border: 1px solid var(--border-2);
   padding: 36px;
   display: flex;
   flex-direction: column;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   position: relative;
   overflow: hidden;
 }
@@ -111,7 +105,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--violet-bright), var(--cyan), transparent);
+  background: linear-gradient(90deg, var(--amber), var(--cyan), transparent);
 }
 
 .cardHeader {
@@ -136,7 +130,7 @@
 .profileRole {
   font-size: 0.88rem;
   font-family: var(--font-mono);
-  color: var(--violet-bright);
+  color: var(--amber);
 }
 
 .locationBadge {
@@ -146,13 +140,13 @@
   font-size: 0.78rem;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(240, 238, 255, 0.05);
+  background: var(--surface-2);
   border: 1px solid var(--border-2);
   color: var(--text-2);
 }
 
 .locationBadge svg {
-  color: var(--cyan);
+  color: var(--amber);
 }
 
 .bioText {
@@ -169,8 +163,8 @@
   gap: 16px;
   padding: 20px 24px;
   border-radius: var(--radius-md);
-  background: rgba(124, 92, 246, 0.07);
-  border: 1px solid rgba(124, 92, 246, 0.2);
+  background: rgba(23, 79, 229, 0.06);
+  border: 1px solid rgba(23, 79, 229, 0.15);
   margin-bottom: 28px;
 }
 
@@ -181,8 +175,8 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(124, 92, 246, 0.15);
-  color: var(--violet-bright);
+  background: rgba(23, 79, 229, 0.1);
+  color: var(--amber);
   flex-shrink: 0;
 }
 
@@ -200,7 +194,7 @@
 
 .eduSchool {
   font-size: 0.9rem;
-  color: var(--violet-bright);
+  color: var(--amber);
 }
 
 .eduSub {
@@ -238,12 +232,12 @@
   color: var(--text-2);
   padding: 10px 14px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: var(--surface-2);
+  border: 1px solid var(--border-2);
 }
 
 .checkIcon {
-  color: var(--cyan);
+  color: var(--violet);
   font-size: 0.85rem;
   flex-shrink: 0;
   margin-top: 2px;
@@ -266,11 +260,7 @@
   position: relative;
   padding: 28px 24px;
   border-radius: var(--radius-md);
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.03) 0%,
-    rgba(255, 255, 255, 0.01) 100%
-  );
+  background: #f7f6f3;
   border: 1px solid var(--border-2);
   display: flex;
   flex-direction: column;
@@ -285,7 +275,7 @@
   right: -50%;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(124, 92, 246, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(23, 79, 229, 0.1) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -293,10 +283,7 @@
   font-size: clamp(2.2rem, 3.5vw, 2.8rem);
   font-weight: 800;
   line-height: 1;
-  background: linear-gradient(135deg, var(--violet-bright) 0%, #ffffff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--amber);
 }
 
 .statLabel {
@@ -310,12 +297,8 @@
 .aboutCtaCard {
   padding: 32px;
   border-radius: var(--radius-md);
-  background: linear-gradient(
-    135deg,
-    rgba(124, 92, 246, 0.18) 0%,
-    rgba(34, 211, 238, 0.1) 100%
-  );
-  border: 1px solid rgba(124, 92, 246, 0.3);
+  background: #151515;
+  border: 1px solid #151515;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -325,12 +308,12 @@
 .aboutCtaCard h3 {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--text-1);
+  color: #fff;
 }
 
 .aboutCtaCard p {
   font-size: 0.9rem;
-  color: var(--text-2);
+  color: rgba(255,255,255,.68);
   line-height: 1.5;
 }
 
@@ -342,7 +325,7 @@
   margin-top: 8px;
   padding: 12px 24px;
   border-radius: 999px;
-  background: var(--violet);
+  background: var(--amber);
   color: #fff;
   font-weight: 600;
   font-size: 0.9rem;
@@ -351,10 +334,10 @@
 }
 
 .ctaButton:hover {
-  background: var(--violet-bright);
-  color: #060608;
+  background: var(--violet);
+  color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(124, 92, 246, 0.35);
+  box-shadow: 0 10px 25px rgba(23, 79, 229, 0.35);
 }
 
 /* Skills Marquee */
@@ -414,7 +397,7 @@
   gap: 10px;
   padding: 10px 18px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.78);
   border: 1px solid var(--border-2);
   font-size: 0.88rem;
   font-weight: 500;
@@ -424,9 +407,9 @@
 }
 
 .skillPill:hover {
-  border-color: var(--skill-color, var(--violet-bright));
+  border-color: var(--skill-color, var(--amber));
   background: rgba(255, 255, 255, 0.07);
-  color: #fff;
+  color: var(--text-1);
   transform: translateY(-2px);
 }
 

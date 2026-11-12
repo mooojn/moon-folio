@@ -28,7 +28,7 @@ export default function Navbar() {
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
         style={{
           boxShadow: scrolled
-            ? '0 0 0 1px rgba(240,238,255,0.06) inset, 0 28px 60px rgba(0,0,0,0.7), 0 0 80px rgba(124, 92, 246, 0.12)'
+            ? '0 0 0 1px rgba(255,255,255,0.7) inset, 0 18px 42px rgba(25,57,49,0.12)'
             : undefined,
         }}
       >

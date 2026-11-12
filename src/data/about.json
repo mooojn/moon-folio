@@ -1,14 +1,14 @@
 {
     "name": "Munees Tariq",
-    "title": "Full-Stack Developer",
-    "tagline": "Building Modern Web Experiences",
+    "title": "Product Engineer Â· Full Stack",
+    "tagline": "I make ideas work beautifully",
     "education": {
         "degree": "BSCS",
         "institution": "University of Engineering and Technology, Lahore",
         "graduationYear": "2027",
         "description": "Pursuing Bachelor of Science in Computer Science with focus on software engineering, web development, and database systems."
     },
-    "bio": "I'm a full-stack developer from Pakistan, specializing in building high-performance web applications, SaaS dashboards, and scalable backend systems. I love turning complex problems into elegant, user-friendly solutions.",
+    "bio": "I am a product engineer from Lahore who turns complex ideas into clear, useful software. I work across the stack, shaping polished interfaces and dependable systems from first brief to launch.",
     "skills": [
         {
             "name": "React.js",
@@ -73,27 +73,27 @@
     ],
     "stats": [
         {
-            "value": "20+",
-            "label": "Projects Completed"
+            "value": "4+",
+            "label": "Years building software"
         },
         {
-            "value": "5+",
-            "label": "Client Experiences"
+            "value": "3",
+            "label": "Regions served"
         },
         {
             "value": "2027",
             "label": "Expected Graduation"
         },
         {
-            "value": "25+",
-            "label": "Technologies Mastered"
+            "value": "2",
+            "label": "Products led end to end"
         }
     ],
     "highlights": [
         "Led development teams of up to 6 members",
-        "Improved SEO rankings for clients by 80%",
-        "Reduced page load times by 60%",
-        "Built ACID-compliant database systems"
+        "Led delivery with small, cross-functional teams",
+        "Built a real-time camera and media workflow",
+        "Shipped software across web and desktop"
     ],
     "contact": {
         "email": "moojntariq@gmail.com"

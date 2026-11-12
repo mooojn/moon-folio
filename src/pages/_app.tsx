@@ -2,7 +2,6 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import Footer from '@/components/Footer';
-import CustomCursor from '@/components/CustomCursor';
 import { useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -42,7 +41,6 @@ export default function App({ Component, pageProps, router }: AppProps) {
 
   return (
     <>
-      <CustomCursor />
       <AnimatePresence mode="wait">
         <motion.div
           key={router.route}

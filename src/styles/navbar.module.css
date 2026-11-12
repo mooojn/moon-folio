@@ -18,23 +18,21 @@
   gap: 8px;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(13, 13, 18, 0.82);
-  border: 1px solid rgba(124, 92, 246, 0.18);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border-2);
   backdrop-filter: blur(20px) saturate(1.8);
   -webkit-backdrop-filter: blur(20px) saturate(1.8);
   box-shadow:
-    0 0 0 1px rgba(240,238,255,0.04) inset,
-    0 24px 48px rgba(0,0,0,0.5),
-    0 0 60px rgba(124, 92, 246, 0.06);
+    0 0 0 1px rgba(255,255,255,.7) inset,
+    0 16px 42px rgba(25,57,49,.09);
   transition: box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .navbar:hover {
-  border-color: rgba(124, 92, 246, 0.3);
+  border-color: rgba(23, 79, 229, 0.3);
   box-shadow:
-    0 0 0 1px rgba(240,238,255,0.06) inset,
-    0 28px 56px rgba(0,0,0,0.55),
-    0 0 80px rgba(124, 92, 246, 0.1);
+    0 0 0 1px rgba(25, 37, 34, 0.06) inset,
+    0 18px 42px rgba(25,57,49,.1);
 }
 
 .navLink {
@@ -43,7 +41,7 @@
   border-radius: 999px;
   font-size: 0.88rem;
   font-weight: 500;
-  color: rgba(240, 238, 255, 0.6);
+  color: var(--text-2);
   letter-spacing: 0.01em;
   transition: color 0.25s ease, background 0.25s ease;
   white-space: nowrap;
@@ -51,18 +49,18 @@
 
 .navLink:hover {
   color: var(--text-1);
-  background: rgba(124, 92, 246, 0.1);
+  background: var(--surface-2);
 }
 
 .navLink.active {
   color: var(--text-1);
-  background: rgba(124, 92, 246, 0.15);
+  background: rgba(23, 79, 229, 0.15);
 }
 
 .navDivider {
   width: 1px;
   height: 18px;
-  background: rgba(240, 238, 255, 0.08);
+  background: var(--border-2);
   flex-shrink: 0;
 }
 
@@ -70,7 +68,7 @@
 .navCta {
   padding: 9px 20px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #7c5cf6, #22d3ee);
+  background: var(--amber);
   font-size: 0.88rem;
   font-weight: 600;
   color: #fff;

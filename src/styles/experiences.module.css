@@ -1,233 +1,26 @@
-/* ===== EXPERIENCES SECTION ===== */
-.experiencesSection {
-  width: 100%;
-  padding: 100px 0 120px;
-  position: relative;
-}
-
-.sectionAmbient {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(
-    ellipse at 80% 20%,
-    rgba(245, 158, 11, 0.07) 0%,
-    transparent 60%
-  );
-  pointer-events: none;
-  z-index: 0;
-}
-
-.inner {
-  width: var(--container);
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-/* ===== HEADING ===== */
-.sectionHeading {
-  margin-bottom: 72px;
-}
-
-.sectionLabel {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 16px;
-}
-
-.sectionLabel::before {
-  content: '';
-  display: block;
-  width: 28px;
-  height: 1px;
-  background: var(--amber);
-}
-
-.sectionTitle {
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.08;
-  color: var(--text-1);
-}
-
-.sectionDesc {
-  margin-top: 16px;
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: var(--text-2);
-  max-width: 540px;
-}
-
-/* ===== TIMELINE LAYOUT ===== */
-.timeline {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-/* Vertical line */
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 24px;
-  bottom: 24px;
-  width: 1px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(124, 92, 246, 0.4) 10%,
-    rgba(245, 158, 11, 0.4) 50%,
-    rgba(34, 211, 238, 0.3) 90%,
-    transparent 100%
-  );
-}
-
-/* ===== EXPERIENCE CARD ===== */
-.card {
-  position: relative;
-  margin-left: 44px;
-  padding: 30px 32px;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(
-    145deg,
-    rgba(255,255,255,0.036) 0%,
-    rgba(255,255,255,0.01) 100%
-  );
-  border: 1px solid var(--border-2);
-  margin-bottom: 24px;
-  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s var(--ease-smooth);
-}
-
+.experiencesSection { width: 100%; padding: 100px 0 120px; position: relative; }
+.sectionAmbient { position: absolute; top: 0; right: 0; width: 700px; height: 700px; background: radial-gradient(ellipse at 80% 20%, rgba(198,47,59,.07), transparent 60%); pointer-events: none; }
+.inner { width: var(--container); margin: 0 auto; position: relative; z-index: 1; }
+.sectionHeading { margin-bottom: 64px; }
+.sectionLabel { display: inline-flex; align-items: center; gap: 10px; font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--amber); margin-bottom: 16px; }
+.sectionLabel::before { content: ''; display: block; width: 26px; height: 1px; background: var(--violet); }
+.sectionTitle { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 700; letter-spacing: -.045em; line-height: 1.08; color: var(--text-1); }
+.sectionDesc { margin-top: 16px; font-size: 1.05rem; line-height: 1.75; color: var(--text-2); max-width: 560px; }
+.timeline { position: relative; display: flex; flex-direction: column; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 24px; bottom: 24px; width: 1px; background: linear-gradient(to bottom, transparent, rgba(23,79,229,.35) 10%, rgba(198,47,59,.32) 52%, rgba(135,167,255,.45) 90%, transparent); }
+.card { position: relative; margin-left: 44px; margin-bottom: 20px; padding: 30px 32px; border-radius: var(--radius-lg); background: rgba(255,255,255,.82); border: 1px solid var(--border-2); transition: border-color .3s ease, box-shadow .3s ease, transform .3s var(--ease-smooth); }
 .card:last-child { margin-bottom: 0; }
-
-.card:hover {
-  border-color: rgba(245, 158, 11, 0.22);
-  box-shadow:
-    0 0 0 1px rgba(245,158,11,0.07) inset,
-    0 32px 60px rgba(0,0,0,0.4),
-    0 0 50px rgba(245, 158, 11, 0.06);
-  transform: translateX(6px);
-}
-
-/* ===== TIMELINE DOT ===== */
-.dot {
-  position: absolute;
-  left: -52px;
-  top: 34px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--violet), var(--cyan));
-  box-shadow:
-    0 0 0 4px rgba(124,92,246,0.15),
-    0 0 20px rgba(124,92,246,0.3);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.card:hover .dot {
-  box-shadow:
-    0 0 0 6px rgba(245,158,11,0.15),
-    0 0 30px rgba(245,158,11,0.4);
-  background: linear-gradient(135deg, var(--amber), #f97316);
-  transform: scale(1.2);
-}
-
-/* ===== CARD HEADER ===== */
-.cardHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.cardIndex {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: var(--text-3);
-  letter-spacing: 0.1em;
-}
-
-.badges {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.roleBadge {
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 0.76rem;
-  font-weight: 600;
-  background: linear-gradient(135deg, rgba(245,158,11,0.18), rgba(249,115,22,0.14));
-  border: 1px solid rgba(245,158,11,0.28);
-  color: var(--amber);
-}
-
-.periodBadge {
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 0.76rem;
-  font-weight: 500;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--border-2);
-  color: var(--text-3);
-}
-
-/* ===== COMPANY NAME ===== */
-.company {
-  font-size: clamp(1.28rem, 2.2vw, 1.7rem);
-  font-weight: 700;
-  letter-spacing: -0.015em;
-  color: var(--text-1);
-  margin-bottom: 16px;
-}
-
-/* ===== POINTS ===== */
-.points {
-  list-style: none;
-  display: grid;
-  gap: 10px;
-}
-
-.points li {
-  display: flex;
-  gap: 12px;
-  font-size: 0.93rem;
-  line-height: 1.65;
-  color: var(--text-2);
-  align-items: flex-start;
-}
-
-.pointDot {
-  flex-shrink: 0;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--amber);
-  margin-top: 9px;
-  opacity: 0.7;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 640px) {
-  .experiencesSection { padding: 80px 0 90px; }
-  .sectionHeading { margin-bottom: 48px; }
-  .timeline::before { left: 4px; }
-  .card { margin-left: 28px; padding: 22px 20px; }
-  .dot { left: -36px; width: 14px; height: 14px; top: 26px; }
-}
+.card:hover { border-color: rgba(198,47,59,.32); box-shadow: 0 20px 48px rgba(25,57,49,.08); transform: translateX(5px); }
+.dot { position: absolute; left: -52px; top: 34px; width: 16px; height: 16px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 0 5px rgba(23,79,229,.12); transition: background .3s ease, transform .3s ease; }
+.card:hover .dot { background: var(--violet); transform: scale(1.12); }
+.cardHeader { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+.cardIndex { font-family: var(--font-mono); font-size: .72rem; color: var(--text-3); letter-spacing: .1em; }
+.badges { display: flex; gap: 8px; flex-wrap: wrap; }
+.roleBadge, .periodBadge { padding: 6px 12px; border-radius: 999px; font-size: .74rem; font-weight: 600; }
+.roleBadge { background: rgba(23,79,229,.08); border: 1px solid rgba(23,79,229,.15); color: var(--amber); }
+.periodBadge { background: var(--surface-2); border: 1px solid var(--border-2); color: var(--text-2); }
+.company { font-family: var(--font-display); font-size: clamp(1.25rem, 2.2vw, 1.65rem); font-weight: 700; letter-spacing: -.03em; color: var(--text-1); margin-bottom: 16px; }
+.points { display: grid; gap: 10px; }
+.points li { display: flex; gap: 12px; font-size: .94rem; line-height: 1.7; color: var(--text-2); align-items: flex-start; }
+.pointDot { flex-shrink: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--violet); margin-top: 10px; }
+@media (max-width: 640px) { .experiencesSection { padding: 80px 0 90px; } .sectionHeading { margin-bottom: 44px; } .timeline::before { left: 4px; } .card { margin-left: 28px; padding: 22px 20px; } .dot { left: -36px; width: 14px; height: 14px; top: 26px; } }

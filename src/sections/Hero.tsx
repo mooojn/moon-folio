@@ -3,8 +3,6 @@ import { useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import styles from '@/styles/hero.module.css';
 
-const SKILLS = ['React', 'Next.js', 'Node.js', 'TypeScript', 'Shopify', 'WordPress', 'APIs', 'SaaS'];
-
 const fadeUp = (delay = 0): Record<string, any> => ({
   initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0 },
@@ -23,10 +21,6 @@ export default function Hero() {
       <motion.div className={styles.heroBg} style={{ y, opacity }}>
         <div className={styles.spotlight} />
         <div className={styles.spotlight2} />
-        <div className={styles.gridLines} />
-        <div className={styles.orb1} />
-        <div className={styles.orb2} />
-        <div className={styles.orb3} />
       </motion.div>
 
       {/* Content */}
@@ -37,14 +31,12 @@ export default function Hero() {
         </motion.div>
 
         <motion.h1 className={styles.heroTitle} {...fadeUp(0.22)}>
-          I Build <br />
-          <em>Modern Web Apps</em>
-          &amp; Scalable Systems
+          I make ideas<br />
+          <em>work beautifully.</em>
         </motion.h1>
 
         <motion.p className={styles.heroSubtitle} {...fadeUp(0.34)}>
-          High-performance apps, SaaS dashboards, APIs, automations,
-          Shopify, WordPress, and custom full-stack solutions — crafted with precision.
+          Product engineer building considered digital experiences from first sketch to final release.
         </motion.p>
 
         <motion.div className={styles.heroActions} {...fadeUp(0.46)}>

@@ -3,6 +3,7 @@ import { useState, useRef, useCallback } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import styles from '@/styles/projects.module.css';
 import projectsData from '@/data/projects.json';
+import otherProjects from '@/data/otherProjects.json';
 
 type ProjectMetric = { name: string; value: string };
 type ProjectAction = { name: string; link: string };
@@ -16,6 +17,14 @@ type ProjectItem = {
   actions: ProjectAction[];
   image: string;
   featured?: boolean;
+};
+
+type OtherProject = {
+  title: string;
+  type: string;
+  built: string;
+  learned: string[];
+  technologies: string[];
 };
 
 const CATEGORIES = ['All', 'FinTech', 'Banking', 'Database Systems', 'Events Services'];
@@ -45,10 +54,10 @@ export default function Projects() {
             <div>
               <p className={styles.sectionLabel}>Portfolio</p>
               <h2 className={styles.sectionTitle}>
-                Featured Works <span className={styles.titleSpark}>&amp; Systems</span>
+                Selected <span className={styles.titleSpark}>work</span>
               </h2>
               <p className={styles.sectionDesc}>
-                Production-grade software, SaaS tools, and desktop engines — architected for speed, reliability, and real-world results.
+                A selection of products and experiences built with care, clarity and respect for the details.
               </p>
             </div>
           </div>
@@ -85,9 +94,61 @@ export default function Projects() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        <section className={styles.otherProjects} aria-labelledby="other-projects-title">
+          <div className={styles.otherHeading}>
+            <div>
+              <p className={styles.sectionLabel}>More work</p>
+              <h3 className={styles.otherTitle} id="other-projects-title">Projects &amp; collaborations</h3>
+            </div>
+            <p className={styles.otherIntro}>A few more things I’ve built, explored and learned along the way.</p>
+          </div>
+
+          <div className={styles.otherList}>
+            {(otherProjects as OtherProject[]).map((project, index) => (
+              <article className={styles.otherCard} key={project.title}>
+                <div className={styles.otherCardTop}>
+                  <span className={styles.otherIndex}>{String(index + 1).padStart(2, '0')}</span>
+                  <span className={styles.otherType}>{project.type}</span>
+                </div>
+                <h4 className={styles.otherCardTitle}>{project.title}</h4>
+                <div className={styles.otherNotes}>
+                  <div className={styles.builtNote}>
+                    <span className={styles.noteLabel}>Built</span>
+                    <p>{project.built}</p>
+                  </div>
+                  <div className={styles.learnedNote}>
+                    <span className={styles.noteLabel}>Learned</span>
+                    <ul>{project.learned.map((item) => <li key={item}>{item}</li>)}</ul>
+                  </div>
+                </div>
+                <ul className={styles.otherTechs} aria-label="Technologies used">
+                  {project.technologies.map((technology) => <li key={technology}><TechIcon name={technology} /><span>{technology}</span></li>)}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
       </div>
     </section>
   );
+}
+
+function TechIcon({ name }: { name: string }) {
+  const iconPaths: Record<string, string> = {
+    'Next.js': 'M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm-1 5h2v6l4 5h-2.5L11 13.5Zm-3 0h2v11H8Z',
+    FastAPI: 'M13 2 4 13h6l-1 9 11-13h-7Z',
+    Supabase: 'm13 2-9 12h8l-1 8 9-12h-8Z',
+    PostgreSQL: 'M12 3a7 7 0 0 0-7 7v4a4 4 0 0 0 8 0v-2h-2v2a2 2 0 0 1-4 0v-4a5 5 0 0 1 10 0v6a2 2 0 0 1-4 0v-2h-2v2a4 4 0 0 0 8 0v-6a7 7 0 0 0-7-7Z',
+    Python: 'M12 2c-5 0-5 2-5 5v2h6v1H5c-3 0-4 2-4 5s1 5 4 5h2v-3c0-2 2-4 4-4h5c2 0 3-1 3-3V7c0-3-2-5-7-5Zm-2 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm8 6v3c0 2-2 4-4 4H9c-2 0-3 1-3 3v2c0 3 2 5 6 5s5-2 5-5v-2h-6v-1h8c3 0 4-2 4-5s-1-4-4-4Zm-2 9a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z',
+    'YOLOv8-Pose': 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm-4 9a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm8 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm-4 5a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z',
+    MediaPipe: 'M12 2 3 7v10l9 5 9-5V7Zm0 3 6 3.3v7.4L12 19l-6-3.3V8.3Z',
+    WebSockets: 'M4 5h16v2H4zm0 6h16v2H4zm0 6h16v2H4z',
+    'C#': 'M9 4 7 20h2l2-16Zm6 0-2 16h2l2-16ZM4 9h16v2H4Zm-1 5h16v2H3Z',
+    'React': 'M12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm0-8c-1.3 0-2.3 4-2.3 9s1 9 2.3 9 2.3-4 2.3-9-1-9-2.3-9Zm0 0c-4.5 0-8.5 2.3-8.5 4s4 4 8.5 4 8.5-2.3 8.5-4-4-4-8.5-4Zm-7.4 4c-2.3 3.9-3.1 8.5-1.7 9.3s5.4-1.5 7.7-5.4 3.1-8.5 1.7-9.3S6.9 3.1 4.6 7Z',
+  };
+  const path = iconPaths[name] || 'M4 4h16v16H4zm3 3v10h2V7zm4 0v10h2V7zm4 0v10h2V7z';
+  return <svg className={styles.techIcon} viewBox="0 0 24 24" aria-hidden="true"><path d={path} fill="currentColor" /></svg>;
 }
 
 function Card({ project, index }: { project: ProjectItem; index: number }) {

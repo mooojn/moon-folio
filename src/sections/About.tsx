@@ -38,11 +38,11 @@ export default function About() {
         >
           <span className={styles.sectionBadge}>About Me</span>
           <h2 className={styles.title}>
-            Crafting Digital Solutions <br />
-            <span className={styles.titleGradient}>With Engineering Precision</span>
+            From first brief <br />
+            <span className={styles.titleGradient}>to shipped product</span>
           </h2>
           <p className={styles.subtitle}>
-            A glimpse into my background, technical skill set, and core achievements.
+            Product thinking and full stack craft, grounded in building software people can use.
           </p>
         </motion.div>
 
