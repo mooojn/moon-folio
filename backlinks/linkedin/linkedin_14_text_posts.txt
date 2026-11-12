@@ -1,0 +1,414 @@
+LINKEDIN — 14 TEXT-ONLY POST DRAFTS
+Two-week content bank | Ready to copy and paste
+================================================
+
+PUBLISHING NOTE
+These are 14 drafts, not a recommendation to publish twice daily. Use one per weekday over roughly three weeks, or select 10 for two weeks and keep the rest as reserves. Review every factual detail before posting. The drafts avoid unsupported performance metrics and client names.
+
+POST 1 — THE CAMERA INTEGRATION THAT WASN'T JUST A CAMERA INTEGRATION
+
+A camera integration can look simple on a feature list.
+
+Connect the camera.
+Show a preview.
+Take a photo.
+
+But the difficult part is making all of those steps work reliably inside the application.
+
+In a photo booth application I worked on, the desktop app was built with Electron, React and Node.js. The cameras were Canon devices, and the camera communication was handled through a C# helper using Canon's EDSDK.
+
+That meant the application had to coordinate two different parts:
+
+The desktop application handled the user-facing experience and application flow.
+
+The C# helper handled the camera-side communication, with messages passed between the two through Electron IPC.
+
+The interesting engineering work was not simply triggering a capture. It was making the pieces communicate in a predictable way so that live view, capture and camera settings could fit into one usable workflow.
+
+One lesson I took from this: when integrating hardware into software, the boundary between components deserves as much attention as the feature itself.
+
+A feature is only as reliable as the communication behind it.
+
+Have you worked on a project where connecting two technologies turned out to be harder than building the feature itself?
+
+#SoftwareEngineering #ElectronJS #CSharp #React #DesktopDevelopment
+
+========================================================================
+
+POST 2 — AI DOESN'T REMOVE THE NEED TO UNDERSTAND THE SYSTEM
+
+AI can generate code quickly.
+
+That does not automatically mean the resulting software is correct, maintainable or ready for users.
+
+A generated function might work in isolation and still fail when it meets the rest of an application.
+
+It might ignore an existing data model.
+It might handle the happy path but miss errors.
+It might introduce a dependency the project does not need.
+It might solve the visible request while breaking an assumption elsewhere.
+
+The developer's job is not just to produce code. It is to understand what the code must do, where it fits, and how to verify that it does it.
+
+I think the most useful way to work with AI coding tools is to give them bounded tasks:
+
+1. Explain the existing system and constraints.
+2. Ask for one specific change.
+3. Review the proposed implementation.
+4. Test the expected path and the failure paths.
+5. Check the effect on the rest of the application.
+
+The faster code becomes to produce, the more important engineering judgment becomes.
+
+AI can help write an implementation. It cannot take responsibility for whether that implementation belongs in your system.
+
+Where has AI genuinely helped your development workflow, and where do you still prefer to do the thinking yourself?
+
+#AI #SoftwareDevelopment #Engineering #DeveloperTools
+
+========================================================================
+
+POST 3 — WHY I SEPARATE THE CAMERA HELPER FROM THE DESKTOP UI
+
+One architectural decision in a desktop application can make later changes much easier.
+
+In a photo booth project, the user-facing application was built with Electron, React and Node.js. Canon camera communication was handled separately through a C# helper that wrapped the Canon EDSDK.
+
+Why keep those responsibilities separate?
+
+Because the UI and the camera have different jobs.
+
+The UI needs to manage screens, user actions and the photo booth workflow.
+
+The camera layer needs to deal with device communication, camera settings, live view and capture.
+
+Electron IPC provides a communication boundary between the application and the helper.
+
+That separation gives each part a clearer responsibility. It also makes it easier to reason about whether a problem belongs to the interface, the communication layer or the camera integration.
+
+This does not mean every application needs multiple processes or languages. Extra boundaries also introduce complexity: messages need clear formats, errors need to be handled, and both sides need to agree on what a command means.
+
+The useful question is not “How many technologies can I use?”
+
+It is “Which responsibilities need to be separated, and what does that separation make easier?”
+
+Good architecture is not about adding layers. It is about making change safer.
+
+How do you decide when a component deserves its own boundary?
+
+#SoftwareArchitecture #ElectronJS #CSharp #SystemDesign
+
+========================================================================
+
+POST 4 — A BUSINESS WEBSITE IS NOT FINISHED WHEN IT LOOKS GOOD
+
+A website can look polished and still make it difficult for a customer to take the next step.
+
+For a business website, I think the important questions start after the visual design:
+
+Can a visitor understand the service quickly?
+Is the main action obvious?
+Can someone find the information they need without hunting for it?
+Does the site work properly on a phone?
+Are forms and contact links actually usable?
+Can the business update important content without depending on a developer for every small change?
+
+I have worked on websites for businesses in different markets, using tools including WordPress, Shopify and Sanity.
+
+The platform changes, but the underlying goal stays similar: make it easier for the visitor to understand the offer and act on it.
+
+A website should not make the customer work hard to figure out what the business does.
+
+Before adding another animation or section, I would rather check whether the page answers the visitor's most important questions.
+
+What is the first thing you look for when reviewing a business website?
+
+#WebDevelopment #UserExperience #BusinessWebsites #Conversion
+
+========================================================================
+
+POST 5 — THE PHOTO BOOTH WORKFLOW WAS MORE THAN TAKING A PICTURE
+
+A photo booth application is easy to underestimate if you think its only job is to take a photo.
+
+The complete experience involves several connected steps.
+
+In a desktop application I worked on with a small team, the workflow included Canon camera integration, image editing, overlay templates, GIF and boomerang generation, print-ready output and QR-code sharing.
+
+Different parts of the system had different technical needs.
+
+The camera integration used a C# helper around Canon EDSDK.
+The desktop application used Electron, React and Node.js.
+FFmpeg was part of the media pipeline for GIF and boomerang generation.
+Event-based images were stored using Supabase, with QR codes supporting sharing.
+
+What made the project interesting was connecting those pieces into one workflow rather than treating them as unrelated features.
+
+A user does not think about which library generated a GIF or which service stored an image. They experience one product.
+
+That is a useful reminder when building software: the handoffs between features are part of the product too.
+
+When you build an application, do you plan the full user journey first or build individual features and connect them later?
+
+#ProductEngineering #ElectronJS #FFmpeg #Supabase #SoftwareDevelopment
+
+========================================================================
+
+POST 6 — FOUR THINGS I CHECK WHEN A FRONTEND CALLS AN API
+
+An API integration is not finished just because the request returns a 200 response.
+
+That only tells you one part of the story.
+
+When connecting a frontend to an API, I want to check four things:
+
+1. Loading state
+What does the user see while the request is running? A blank screen can make a working request feel broken.
+
+2. Empty state
+What happens when the API succeeds but returns no records? Empty data is not necessarily an error.
+
+3. Error state
+Does the interface explain what went wrong in a useful way, or does it leave the user with a generic failure message?
+
+4. Data consistency
+Does the UI display the response accurately? Are missing fields, unexpected values and stale data handled?
+
+These checks are small, but they make the difference between an integration that works in a developer's happy-path test and one that behaves sensibly for a real user.
+
+I try to review the whole request lifecycle, not only the API call itself.
+
+What is the API edge case you most often see developers overlook?
+
+#API #FrontendDevelopment #React #SoftwareEngineering
+
+========================================================================
+
+POST 7 — AN AI AGENT NEEDS A CLEAR JOB, NOT JUST A BIG PROMPT
+
+Giving an AI agent access to a repository and asking it to “build the feature” sounds convenient.
+
+But broad instructions make it harder to judge whether the result is correct.
+
+A better starting point is a task with boundaries.
+
+For example, instead of asking an agent to rebuild an entire settings area, define:
+
+The exact user problem.
+The files or components likely involved.
+The behaviour that must remain unchanged.
+The expected result.
+The tests or checks that prove the change works.
+
+Then review the diff before accepting it.
+
+This approach makes the agent's work easier to inspect. If something goes wrong, the change is also easier to understand and isolate.
+
+I see AI agents as useful contributors to a development workflow, not as a reason to skip engineering practices.
+
+Code review, testing, clear requirements and understanding the system still matter.
+
+In fact, when code is generated faster, reviewing the result becomes even more important.
+
+What kind of development task would you trust an AI agent with today?
+
+#AIAgents #SoftwareEngineering #DeveloperTools #AI
+
+========================================================================
+
+POST 8 — A DATABASE PROJECT TAUGHT ME TO THINK BEYOND CRUD
+
+CRUD operations are a useful starting point for understanding a database system.
+
+But they are not the whole system.
+
+In a university project, I worked with a team on a custom DBMS built in C# with a Windows Forms interface.
+
+The work included query handling for SELECT and WHERE conditions, comparison operators, CSV and binary storage, indexing and an ACID transaction manager.
+
+Each part raised a different question.
+
+How should a query be interpreted?
+How should records be stored and retrieved?
+How can an index help locate data?
+What should happen when a transaction does not complete as expected?
+
+Building even a small database system makes you appreciate how many responsibilities sit behind a simple query.
+
+Most application developers interact with databases through mature tools and libraries. That abstraction is valuable, but understanding the concepts underneath helps when performance, consistency or debugging becomes difficult.
+
+You do not need to build a database engine for every project.
+
+But understanding what the database is doing can make you a better application developer.
+
+Which database concept took you the longest to understand?
+
+#Databases #CSharp #SoftwareEngineering #ComputerScience
+
+========================================================================
+
+POST 9 — A WEBSITE PROJECT SHOULD START WITH THE BUSINESS, NOT THE FRAMEWORK
+
+When someone asks for a website, the first question should not always be “WordPress or Next.js?”
+
+The more useful questions are:
+
+What does the business need the website to achieve?
+Who will update its content?
+Does it need a store, a service catalogue or a lead-generation flow?
+How much flexibility will the business need later?
+Who will maintain it?
+
+I have worked with WordPress, Shopify and Sanity across business website projects. They solve different problems, and choosing between them depends on the requirements.
+
+A content-managed website has different needs from an online store.
+A small service business may value straightforward editing more than a highly custom architecture.
+A project with more complex frontend requirements may justify a different approach.
+
+The best stack is not the one with the most impressive name.
+
+It is the one that meets the actual requirements without creating unnecessary maintenance work.
+
+I try to understand the business workflow before recommending the technology.
+
+When choosing a stack for a client, what requirement influences your decision most?
+
+#WebDevelopment #WordPress #Shopify #NextJS #Freelancing
+
+========================================================================
+
+POST 10 — WHAT I LEARNED FROM BUILDING AN ML MODEL FOR COURSE DEMAND
+
+Machine learning becomes more meaningful when the prediction connects to a real decision.
+
+In a freelance machine learning project, I worked on a Python model to forecast course demand and support course selection.
+
+The important part of a project like this is not simply producing a prediction.
+
+You need to understand what the prediction is intended to help someone decide, what data is available, and what the model can reasonably tell you.
+
+A forecast is not a guarantee.
+A model output is not automatically a recommendation.
+And a useful result needs to be understandable to the person making the decision.
+
+That experience reinforced a point I keep coming back to with AI and ML work:
+
+Start with the decision or problem. Then work backwards to the data, model and interface.
+
+It is easy to become focused on algorithms and accuracy scores. But the real value depends on whether the output helps someone do something better.
+
+When you work on ML projects, how do you decide whether a model's output is useful enough for a real user?
+
+#MachineLearning #Python #AI #DataScience
+
+========================================================================
+
+POST 11 — SPRINT METRICS ARE USEFUL ONLY IF THE TEAM LEARNS FROM THEM
+
+A sprint report should do more than show whether a team completed its tasks.
+
+During our LabMate software project, our team worked across eight sprints, using a backlog of epics and user stories, acceptance criteria, sprint planning, reviews and retrospectives.
+
+We tracked story points, sprint completion and team velocity. Our project summary recorded 56+ story points and 99% average sprint completion.
+
+Those numbers were useful, but they were not the whole story.
+
+A metric can tell you what happened. It does not automatically explain why it happened or what the team should change next.
+
+That is where sprint reviews and retrospectives matter.
+
+If a story repeatedly carries over, the team should ask whether it was too large, unclear or dependent on unfinished work.
+
+If velocity changes, it is worth understanding the reason before treating the number as a performance score.
+
+For me, the value of Agile tracking is not producing impressive charts. It is giving the team enough information to make the next sprint better.
+
+Which Agile metric has actually helped your team make a better decision?
+
+#Agile #ProjectManagement #SoftwareEngineering #Scrum
+
+========================================================================
+
+POST 12 — 78% VALIDATION ACCURACY IS A STARTING POINT, NOT THE WHOLE STORY
+
+A model's accuracy score is useful.
+
+But it does not tell you everything you need to know about how the model behaves.
+
+In a sign language translator project, our team worked with a custom dataset of around 1,500 images and a YOLOv8-Pose approach covering 25 gesture classes. The reported validation accuracy was 78%.
+
+That number gives a quick summary, but it raises more questions:
+
+Were some gestures easier to recognize than others?
+Which classes were most often confused?
+How did lighting, camera angle or background affect predictions?
+Would the model behave similarly with someone or a setting outside the collected dataset?
+
+Those questions matter because a model can perform reasonably overall while still struggling with particular classes or real-world conditions.
+
+For an application that people may rely on, the next step should be understanding the errors, not just celebrating one metric.
+
+Accuracy is a useful headline. Error analysis is where the engineering work gets more specific.
+
+When you evaluate a classification model, what do you inspect after looking at accuracy?
+
+#MachineLearning #ComputerVision #YOLOv8 #AI
+
+========================================================================
+
+POST 13 — A PROJECT DEMO IS NOT THE SAME AS A COMPLETE PRODUCT
+
+A demo can show that an idea works.
+
+A product has to handle what happens after the demo.
+
+Can the user complete the workflow without help?
+Are errors understandable?
+Does the application handle missing or delayed responses?
+Can the data be found later?
+Can someone maintain the system when requirements change?
+
+These questions matter whether you are building a web application, a desktop tool or an AI-powered feature.
+
+In team and client projects, I have found it useful to look beyond the individual feature and consider the complete journey.
+
+For example, a photo booth workflow does not end when the camera captures an image. The image may need editing, a template, GIF or boomerang processing, print-ready output, storage and sharing.
+
+That is the difference between proving a technical possibility and delivering a usable workflow.
+
+A successful demo is a milestone. It is not the finish line.
+
+What do you check before calling a project ready for real users?
+
+#ProductEngineering #SoftwareDevelopment #UserExperience #Quality
+
+========================================================================
+
+POST 14 — WHAT I WOULD FOCUS ON IF I STARTED A SOFTWARE PROJECT AGAIN
+
+If I started a software project today, I would spend more time clarifying the workflow before choosing the tools.
+
+Not because the technology is unimportant.
+
+Because unclear requirements create expensive decisions later.
+
+I would first write down:
+
+Who is the user?
+What are they trying to complete?
+What is the smallest useful version?
+What data does the workflow need?
+What can fail?
+How will we know the feature works?
+
+Only then would I settle on the architecture and stack.
+
+This does not mean planning every detail before writing code. Some decisions become clearer only after building and testing.
+
+But a little clarity at the start can prevent a lot of avoidable rework.
+
+I still enjoy exploring new frameworks and tools. I just think the strongest engineering decisions begin with the problem, not the trend.
+
+If you could give one piece of advice to someone starting their first serious software project, what would it be?
+
+#SoftwareEngineering #ProductDevelopment #DeveloperJourney #FullStackDevelopment
