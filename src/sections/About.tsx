@@ -138,25 +138,30 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* Technical Skills Marquee */}
+        {/* Skills showcase */}
         <motion.div
           className={styles.skillsContainer}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className={styles.skillsHeader}>
-            <span className={styles.skillsTitle}>Technologies & Stack</span>
-            <div className={styles.skillsLine} />
-          </div>
+          <div className={styles.skillsPanel}>
+            <div className={styles.skillsHeader}>
+              <div>
+                <span className={styles.skillsEyebrow}>The tools behind the work</span>
+                <h3 className={styles.skillsTitle}>A stack built to <span>ship.</span></h3>
+              </div>
+              <div className={styles.skillsCount}><b>{String(skillsWithIcons.length).padStart(2, '0')}</b><span>CORE<br />TOOLS</span></div>
+            </div>
 
-          <div className={styles.marqueeWrap}>
-            <div className={styles.marqueeTrack}>
-              {skillsWithIcons.concat(skillsWithIcons).map((skill, index) => (
+            <div className={styles.marqueeWrap} aria-label="Technologies and tools">
+              <div className={styles.marqueeTrack}>
+                {skillsWithIcons.concat(skillsWithIcons).map((skill, index) => (
                 <div
                   key={index}
                   className={styles.skillPill}
                   style={{ '--skill-color': skill.color } as React.CSSProperties}
+                  aria-hidden={index >= skillsWithIcons.length}
                 >
                   <div
                     className={styles.skillIcon}
@@ -164,7 +169,13 @@ export default function About() {
                   />
                   <span>{skill.name}</span>
                 </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            <div className={styles.skillsFooter}>
+              <span><i /> FRONTEND</span><span><i /> BACKEND</span><span><i /> PRODUCT &amp; TOOLS</span>
+              <span className={styles.skillsFooterNote}>Curious by default. Precise by design.</span>
             </div>
           </div>
         </motion.div>
