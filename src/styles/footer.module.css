@@ -2,14 +2,14 @@
 .footer {
   position: relative;
   width: 100%;
-  padding: 60px 0 40px;
+  padding: 42px 0 34px;
   overflow: hidden;
 }
 
 .footerAmbient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(23, 79, 229, 0.06) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(244, 41, 2, 0.07) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -20,13 +20,7 @@
   transform: translateX(-50%);
   width: min(1200px, 92vw);
   height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(23, 79, 229, 0.3) 30%,
-    rgba(198, 47, 59, 0.24) 70%,
-    transparent
-  );
+  background: linear-gradient(to right, transparent, var(--violet) 30%, var(--amber-dim) 70%, transparent);
 }
 
 .inner {
@@ -68,19 +62,19 @@
   align-items: center;
   gap: 7px;
   padding: 9px 18px;
-  border-radius: 999px;
+  border-radius: 2px;
   border: 1px solid var(--border-2);
   font-size: 0.83rem;
   font-weight: 500;
   color: var(--text-2);
-  background: rgba(255,255,255,0.78);
+  background: #fff;
   transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease, transform 0.2s var(--ease-spring);
 }
 
 .socialLink:hover {
-  color: var(--amber);
-  border-color: rgba(23, 79, 229, 0.3);
-  background: rgba(23, 79, 229, 0.06);
+  color: var(--violet);
+  border-color: var(--violet);
+  background: #fff1ec;
   transform: translateY(-2px);
 }
 
