@@ -15,6 +15,15 @@ export default function Footer() {
 
         <div className={styles.socials}>
           <a
+            href="https://wa.me/923264215366?text=Hi%20Munees%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialLink}
+            aria-label="WhatsApp (+92 326 4215366)"
+          >
+            WhatsApp ↗
+          </a>
+          <a
             href="https://linkedin.com/in/munees-tariq"
             target="_blank"
             rel="noopener noreferrer"

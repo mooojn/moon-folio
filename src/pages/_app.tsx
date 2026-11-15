@@ -2,6 +2,7 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import { useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -53,6 +54,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
           <Footer />
         </motion.div>
       </AnimatePresence>
+      <WhatsAppButton />
     </>
   );
 }
